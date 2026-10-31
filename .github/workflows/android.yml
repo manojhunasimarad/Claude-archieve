@@ -1,0 +1,90 @@
+name: Android apps
+
+# Builds LLM From Zero, Kitchen, Dalal Dojo and Dojo Lessons as Android apps (APK to install, AAB for Google Play)
+# and publishes them as a release of this (private) repo. The app files come from the public repos
+# manojhunasimarad.github.io and Kitchen, so a rebuild always picks up their latest version.
+# Runs when the Android shell changes, or by hand: Actions tab -> Android apps -> Run workflow.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'android/**'
+      - '.github/workflows/android.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-apps
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get LLM From Zero and Dalal Dojo (website repo)
+        uses: actions/checkout@v4
+        with:
+          repository: manojhunasimarad/manojhunasimarad.github.io
+          path: _site
+
+      - name: Get the Kitchen app
+        uses: actions/checkout@v4
+        with:
+          repository: manojhunasimarad/Kitchen
+          path: _kitchen
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Copy the web apps into the Android project
+        run: bash android/sync-web.sh _site _kitchen | tee build.log
+
+      - name: Build APKs and app bundles
+        working-directory: android
+        env:
+          BUILD_NUMBER: ${{ github.run_number }}
+        run: |
+          set -o pipefail
+          chmod +x gradlew
+          ./gradlew --no-daemon --stacktrace assembleRelease bundleRelease 2>&1 | tee -a ../build.log
+
+      - name: Collect files
+        run: |
+          mkdir -p out
+          for f in llm:llm-from-zero kitchen:kitchen dojo:dalal-dojo dojolessons:dojo-lessons; do
+            flavor="${f%%:*}"; name="${f##*:}"
+            cp android/app/build/outputs/apk/$flavor/release/*.apk "out/$name.apk"
+            cp android/app/build/outputs/bundle/${flavor}Release/*.aab "out/$name.aab"
+          done
+          ls -la out | tee -a build.log
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "android-${{ github.run_number }}" out/*.apk out/*.aab \
+            --title "Android apps, build ${{ github.run_number }}" \
+            --latest \
+            --notes "Install on your phone: open this page on the phone, tap the .apk you want, then allow installs from your browser when asked. Updates install over the old version and keep your data. The .aab files are for Google Play only. Built from ${{ github.sha }}."
+
+      - name: Report (status, log and files on the apk branch)
+        if: always()
+        run: |
+          mkdir -p report
+          cp build.log report/ 2>/dev/null || true
+          cp out/*.apk report/ 2>/dev/null || true
+          printf 'run=%s\nstatus=%s\nsha=%s\ntime=%s\n' "${{ github.run_number }}" "${{ job.status }}" "${{ github.sha }}" "$(date -u +%FT%TZ)" > report/status.txt
+          cd report
+          git init -q -b apk
+          git add -A
+          git -c user.name="github-actions" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Build ${{ github.run_number }}: ${{ job.status }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" apk

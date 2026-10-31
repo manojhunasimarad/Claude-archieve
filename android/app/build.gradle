@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.application'
+}
+
+def buildNumber = (System.getenv('BUILD_NUMBER') ?: '1').toInteger()
+
+android {
+    namespace 'io.github.manojhunasimarad.webshell'
+    compileSdk 36
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 36
+        versionCode buildNumber
+        versionName "1.0.${buildNumber}"
+    }
+
+    buildFeatures {
+        buildConfig true
+        resValues true
+    }
+
+    // One signing key for every build, so a newer APK installs over an older one and keeps your data.
+    // See android/README.md before using it for Google Play.
+    signingConfigs {
+        release {
+            storeFile file('../sideload.keystore')
+            storePassword 'sideload-apps'
+            keyAlias 'sideload'
+            keyPassword 'sideload-apps'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    // Each flavor is one app: its own id, name, icon, local port and bundled web files (src/<flavor>/assets/www).
+    flavorDimensions 'app'
+    productFlavors {
+        llm {
+            dimension 'app'
+            applicationId 'io.github.manojhunasimarad.llmfromzero'
+            resValue 'string', 'app_name', 'LLM From Zero'
+            buildConfigField 'int', 'PORT', '8741'
+        }
+        kitchen {
+            dimension 'app'
+            applicationId 'io.github.manojhunasimarad.kitchen'
+            resValue 'string', 'app_name', 'Kitchen'
+            buildConfigField 'int', 'PORT', '8742'
+        }
+        dojo {
+            dimension 'app'
+            applicationId 'io.github.manojhunasimarad.dalaldojo'
+            resValue 'string', 'app_name', 'Dalal Dojo'
+            buildConfigField 'int', 'PORT', '8743'
+        }
+        dojolessons {
+            dimension 'app'
+            applicationId 'io.github.manojhunasimarad.dalaldojo.lessons'
+            resValue 'string', 'app_name', 'Dojo Lessons'
+            buildConfigField 'int', 'PORT', '8744'
+        }
+    }
+
+    androidResources {
+        // Keep files and folders that start with "_" or "." (for example py/sqlite3/__init__.py).
+        ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~'
+        noCompress 'wasm', 'zip'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
