@@ -1,0 +1,56 @@
+name: Daily radar
+
+# Every morning at 06:47 IST: collect what is new on your topics, save radar/latest.md, and open a
+# GitHub issue with the digest so the GitHub app notifies your phone. Yesterday's issue is closed.
+# Run it by hand any time: Actions tab -> Daily radar -> Run workflow.
+on:
+  schedule:
+    - cron: '17 1 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['radar/radar.py', 'radar/config.json', '.github/workflows/radar.yml']
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build the digest
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python radar/radar.py
+
+      - name: Save it in the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add radar/latest.md radar/archive radar/seen.json
+          git diff --cached --quiet || git commit -m "Radar $(TZ=Asia/Kolkata date +%F)"
+          git pull --rebase --autostash origin main && git push origin HEAD:main
+
+      - name: Send it to your phone (GitHub issue)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create radar --color 2a78d6 --description "Daily radar digest" --force
+          for n in $(gh issue list --label radar --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --reason completed
+          done
+          title="$(head -1 radar/latest.md | sed 's/^# //')"
+          { cat radar/latest.md; echo; echo "@${{ github.repository_owner }}"; } > /tmp/body.md
+          gh issue create --title "$title" --label radar --body-file /tmp/body.md

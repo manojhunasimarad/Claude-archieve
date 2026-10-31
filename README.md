@@ -12,6 +12,7 @@ Everything I built with Claude up to Nov 1, 2026, kept in one private repo so it
 | [`drive-tools/`](drive-tools) | The Google Drive cleanup pipeline and the private local code assistant (run the helper script once on the laptop to add the files) |
 | [`context/about-me.md`](context/about-me.md) | A background brief to paste into any AI assistant |
 | [`local-ai/`](local-ai) | Private AI for learning codebases (APD): laptop GPU + V100 over an SSH tunnel, with Continue in VS Code |
+| [`radar/`](radar) | Daily digest of new papers, trending AI research, rising repos and HN stories on your topics, pushed to your phone as a GitHub issue every morning |
 | [`android/`](android) | Android apps for LLM From Zero, Kitchen, Dalal Dojo and Dojo Lessons; GitHub builds them into [Releases](https://github.com/manojhunasimarad/Claude-archieve/releases/latest) |
 
 ## Apps (`artifacts/`)
