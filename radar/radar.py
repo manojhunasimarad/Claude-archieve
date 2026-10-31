@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.parse
@@ -36,10 +37,14 @@ def http_get(url: str, headers: dict | None = None, timeout: int = 30) -> bytes:
 
 
 def keyword_hits(text: str, keywords: list[str]) -> list[str]:
+    """Keywords found at the start of a word ("quantiz" matches "quantization"); short ones like "ros" or
+    "rag" must be whole words, so "across" or "storage" don't count."""
     t = text.lower()
     hits = []
     for k in keywords:
-        if k.lower() in t and k not in hits:
+        kl = k.lower()
+        end = r"(?![a-z0-9])" if len(kl) <= 4 else ""
+        if re.search(r"(?<![a-z0-9])" + re.escape(kl) + end, t) and k not in hits:
             hits.append(k)
     return hits[:3]
 
@@ -170,7 +175,7 @@ def select(cfg, seen, arxiv, hf, hn, gh):
         x["hits"] = keyword_hits(x["text"], kw)
         x["upvotes"] = hf_votes.get(x["arxiv_id"], 0)
         papers.append(x)
-    papers.sort(key=lambda x: (x["upvotes"], len(x["hits"]), x["published"]), reverse=True)
+    papers.sort(key=lambda x: (x["upvotes"] > 0, len(x["hits"]), x["upvotes"], x["published"]), reverse=True)
     papers = papers[: lim["papers"]]
 
     shown = {p["id"] for p in papers}
@@ -180,18 +185,24 @@ def select(cfg, seen, arxiv, hf, hn, gh):
     trending = trending[: lim["trending"]]
 
     repos, names = [], set()
-    for x in sorted(fresh(gh), key=lambda x: x["stars"], reverse=True):
+    for x in fresh(gh):
+        x["hits"] = keyword_hits(x["text"], kw)
+    for x in sorted(fresh(gh), key=lambda x: (min(len(x["hits"]), 2), x["stars"]), reverse=True):
         if x["id"] not in names:
             names.add(x["id"])
             repos.append(x)
     repos = repos[: lim["repos"]]
 
-    talks = []
+    on_topic, big_news = [], []
     for x in fresh(hn):
         x["hits"] = keyword_hits(x["text"], kw)
-        if x["hits"] or x["points"] >= lim["hn_big_news_points"]:
-            talks.append(x)
-    talks = sorted(talks, key=lambda x: (bool(x["hits"]), x["points"]), reverse=True)[: lim["discussions"]]
+        if x["hits"]:
+            on_topic.append(x)
+        elif x["points"] >= lim["hn_big_news_points"]:
+            big_news.append(x)
+    on_topic.sort(key=lambda x: x["points"], reverse=True)
+    big_news.sort(key=lambda x: x["points"], reverse=True)
+    talks = (on_topic + big_news[:2])[: lim["discussions"]]  # at most 2 off-topic headlines
     return papers, trending, repos, talks
 
 

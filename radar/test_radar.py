@@ -89,3 +89,9 @@ def test_full_run_and_no_repeats(tmp_path, monkeypatch):
     radar.main()
     second = (tmp_path / "latest.md").read_text()
     assert "Nothing new worth your time today" in second  # everything was already shown
+
+
+def test_keyword_boundaries():
+    kw = ["ros", "rag", "quantiz", "edge"]
+    assert radar.keyword_hits("works across storage and fragments", kw) == []
+    assert radar.keyword_hits("A ROS node with RAG and quantization at the edge", kw) == ["ros", "rag", "quantiz", "edge"][:3]

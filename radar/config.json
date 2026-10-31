@@ -7,23 +7,53 @@
     },
     {
       "name": "Small and efficient language models",
-      "arxiv": "ti:\"small language model\" OR (abs:\"language model\" AND (abs:pretraining OR abs:\"from scratch\") AND abs:efficient)"
+      "arxiv": "ti:\"small language model\" OR ti:\"small language models\" OR (ti:pretraining AND abs:\"language model\" AND abs:efficient)"
     },
     {
       "name": "Edge AI, pruning, quantization",
-      "arxiv": "abs:tinyml OR (abs:\"edge devices\" AND (abs:pruning OR abs:quantization)) OR (abs:\"large language model\" AND abs:pruning)"
+      "arxiv": "(abs:\"edge device\" OR abs:\"edge devices\" OR abs:\"on-device\" OR abs:tinyml OR abs:microcontroller) AND (abs:pruning OR abs:quantization OR abs:\"efficient inference\")"
     },
     {
       "name": "Cardiac MRI segmentation (Philips work)",
-      "arxiv": "abs:\"cardiac\" AND abs:MRI AND abs:segmentation"
+      "arxiv": "(ti:cardiac OR ti:heart OR ti:\"left ventricle\" OR ti:myocardial) AND abs:MRI AND abs:segmentation"
     }
   ],
   "keywords": [
-    "federated", "edge", "on-device", "tinyml", "embedded", "raspberry pi", "jetson", "ros", "ros2", "robot",
-    "autonomous driving", "automotive", "vehicle", "autosar", "quantiz", "pruning", "distillation",
-    "small language model", "llm", "language model", "transformer", "rag", "agent", "pytorch", "karpathy",
-    "segmentation", "mri", "medical imaging", "india", "bengaluru", "bangalore", "internship", "fellowship",
-    "free course", "open source"
+    "federated",
+    "edge",
+    "on-device",
+    "tinyml",
+    "embedded",
+    "raspberry pi",
+    "jetson",
+    "ros",
+    "ros2",
+    "robot",
+    "autonomous driving",
+    "automotive",
+    "vehicle",
+    "autosar",
+    "quantiz",
+    "pruning",
+    "distillation",
+    "small language model",
+    "llm",
+    "language model",
+    "transformer",
+    "rag",
+    "agent",
+    "pytorch",
+    "karpathy",
+    "segmentation",
+    "mri",
+    "medical imaging",
+    "india",
+    "bengaluru",
+    "bangalore",
+    "internship",
+    "fellowship",
+    "free course",
+    "open source"
   ],
   "github_queries": [
     "\"federated learning\" in:name,description,readme",
@@ -32,5 +62,12 @@
     "topic:edge-ai",
     "topic:tinyml"
   ],
-  "limits": {"papers": 8, "trending": 5, "repos": 6, "discussions": 6, "hn_min_points": 60, "hn_big_news_points": 400}
+  "limits": {
+    "papers": 8,
+    "trending": 5,
+    "repos": 6,
+    "discussions": 6,
+    "hn_min_points": 60,
+    "hn_big_news_points": 500
+  }
 }
