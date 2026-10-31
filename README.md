@@ -11,6 +11,7 @@ Everything I built with Claude up to Nov 1, 2026, kept in one private repo so it
 | [`chats/INDEX.md`](chats/INDEX.md) | Every chat from Aug 1 to Oct 31 with links, plus which chats hold files to download |
 | [`drive-tools/`](drive-tools) | The Google Drive cleanup pipeline and the private local code assistant (run the helper script once on the laptop to add the files) |
 | [`context/about-me.md`](context/about-me.md) | A background brief to paste into any AI assistant |
+| [`local-ai/`](local-ai) | Private AI for learning codebases (APD): laptop GPU + V100 over an SSH tunnel, with Continue in VS Code |
 | [`android/`](android) | Android apps for LLM From Zero, Kitchen, Dalal Dojo and Dojo Lessons; GitHub builds them into [Releases](https://github.com/manojhunasimarad/Claude-archieve/releases/latest) |
 
 ## Apps (`artifacts/`)
@@ -48,3 +49,5 @@ The editable originals stay in Claude under Artifacts, and each can be exported 
 - [ ] Claude data export: claude.ai on a laptop → Settings → Privacy → Export data. Download the zip from the email within 24 hours.
 - [ ] Download the chat-only files listed in [`chats/INDEX.md`](chats/INDEX.md), especially the resumes and the Dalal Dojo Android project.
 - [ ] Run `drive-tools/add-drive-tools.ps1` on the laptop.
+- [ ] Set up the private code assistant: `local-ai/README.md` (laptop first, then `v100.ps1 setup`).
+- [ ] Install the Android apps from [Releases](https://github.com/manojhunasimarad/Claude-archieve/releases/latest).

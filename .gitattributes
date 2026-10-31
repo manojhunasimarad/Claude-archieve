@@ -1,0 +1,6 @@
+# Shell scripts must keep Unix line endings to run on Linux (the V100, GitHub Actions).
+*.sh text eol=lf
+android/gradlew text eol=lf
+*.ps1 text eol=crlf
+*.keystore binary
+*.pdf binary
