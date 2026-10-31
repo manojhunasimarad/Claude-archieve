@@ -1,0 +1,1021 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Reading Papers for the Literature Review</title>
+
+<style>
+  :root {
+    --ink:#16181D; --ink-soft:#3A3F4A; --muted:#5C6270;
+    --paper:#FCFCFD; --paper-sunk:#F2F4F7; --rule:#DFE2E8; --rule-soft:#EAECF1;
+    --m-assume:#E8B93C; --m-limit:#D5484A; --m-systems:#3A72C4; --m-quote:#3E9068;
+    --w-assume:#FAEDC4; --w-limit:#F8DAD9; --w-systems:#D6E2F6; --w-quote:#D2E9DC;
+    --accent:var(--m-systems);
+    /* Stacks ordered for Windows first (verified installed), then macOS/Linux fallbacks.
+       Sitka Text and Charter share a designer (Matthew Carter), so the look holds across both. */
+    --serif: "Sitka Text", Charter, "Bitstream Charter", Cambria, "Iowan Old Style", Constantia, Georgia, serif;
+    --sans: "Segoe UI Variable Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: Consolas, "Cascadia Mono", ui-monospace, "SF Mono", Menlo, "DejaVu Sans Mono", monospace;
+    --measure: 70ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink:#E9EBF0; --ink-soft:#C2C7D2; --muted:#939AAA;
+      --paper:#121419; --paper-sunk:#1A1D24; --rule:#2C313B; --rule-soft:#23272F;
+      --m-assume:#F0CB63; --m-limit:#EF7274; --m-systems:#74A4E8; --m-quote:#63BE93;
+      --w-assume:#3A2F12; --w-limit:#3D1E1F; --w-systems:#16283F; --w-quote:#14311F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink:#E9EBF0; --ink-soft:#C2C7D2; --muted:#939AAA;
+    --paper:#121419; --paper-sunk:#1A1D24; --rule:#2C313B; --rule-soft:#23272F;
+    --m-assume:#F0CB63; --m-limit:#EF7274; --m-systems:#74A4E8; --m-quote:#63BE93;
+    --w-assume:#3A2F12; --w-limit:#3D1E1F; --w-systems:#16283F; --w-quote:#14311F;
+  }
+  :root[data-theme="light"] {
+    --ink:#16181D; --ink-soft:#3A3F4A; --muted:#5C6270;
+    --paper:#FCFCFD; --paper-sunk:#F2F4F7; --rule:#DFE2E8; --rule-soft:#EAECF1;
+    --m-assume:#E8B93C; --m-limit:#D5484A; --m-systems:#3A72C4; --m-quote:#3E9068;
+    --w-assume:#FAEDC4; --w-limit:#F8DAD9; --w-systems:#D6E2F6; --w-quote:#D2E9DC;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; padding: 0 1.5rem 6rem;
+  }
+  .wrap { max-width: var(--measure); margin: 0 auto; }
+
+  .masthead { padding: 4.5rem 0 2rem; border-bottom: 1px solid var(--rule); }
+  .eyebrow {
+    font-family: var(--mono); font-size: .76rem; letter-spacing: .11em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0 0 1.1rem;
+  }
+  h1 {
+    font-family: var(--serif); font-size: clamp(2rem, 5.5vw, 2.9rem);
+    line-height: 1.12; font-weight: 600; letter-spacing: -.015em;
+    text-wrap: balance; margin: 0 0 1rem;
+  }
+  .standfirst {
+    font-family: var(--serif); font-size: 1.13rem; line-height: 1.62;
+    color: var(--ink-soft); margin: 0; max-width: 58ch;
+  }
+
+  .legend-dock {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule);
+    margin: 0 -1.5rem 3rem; padding: .7rem 1.5rem;
+  }
+  .legend-inner {
+    max-width: var(--measure); margin: 0 auto;
+    display: flex; flex-wrap: wrap; gap: .45rem .5rem; align-items: center;
+  }
+  .legend-lab {
+    font-family: var(--mono); font-size: .62rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--muted); margin-right: .2rem;
+  }
+  .chip {
+    display: inline-flex; align-items: baseline; gap: .42rem;
+    font-size: .78rem; font-weight: 600; padding: .2rem .55rem .25rem;
+    border-radius: 3px; border: 1px solid transparent; white-space: nowrap;
+  }
+  .chip i { width:.58rem; height:.58rem; border-radius:2px; display:inline-block; flex:none; transform: translateY(.02rem); }
+  .chip small { font-family: var(--mono); font-weight: 500; font-size: .74rem; color: var(--ink-soft); }
+  .c-assume  { background: var(--w-assume);  border-color: color-mix(in srgb, var(--m-assume) 40%, transparent); }
+  .c-limit   { background: var(--w-limit);   border-color: color-mix(in srgb, var(--m-limit) 40%, transparent); }
+  .c-systems { background: var(--w-systems); border-color: color-mix(in srgb, var(--m-systems) 40%, transparent); }
+  .c-quote   { background: var(--w-quote);   border-color: color-mix(in srgb, var(--m-quote) 40%, transparent); }
+  .c-assume i{background:var(--m-assume);} .c-limit i{background:var(--m-limit);}
+  .c-systems i{background:var(--m-systems);} .c-quote i{background:var(--m-quote);}
+
+  section { margin: 0 0 3.8rem; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: .8rem; margin: 0 0 1.4rem;
+    padding-bottom: .6rem; border-bottom: 1px solid var(--rule);
+  }
+  .sec-num {
+    font-family: var(--mono); font-size: .72rem; color: var(--accent);
+    letter-spacing: .08em; flex: none; transform: translateY(-.15rem);
+  }
+  h2 {
+    font-family: var(--serif); font-size: 1.52rem; font-weight: 600;
+    letter-spacing: -.01em; line-height: 1.25; text-wrap: balance; margin: 0;
+  }
+  h3 {
+    font-family: var(--sans); font-size: .74rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+    margin: 2.2rem 0 .8rem;
+  }
+  p { margin: 0 0 1.05rem; }
+  .prose { font-family: var(--serif); font-size: 1.03rem; line-height: 1.68; }
+  a { color: var(--accent); text-underline-offset: .18em; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  code, .mono { font-family: var(--mono); font-size: .87em; }
+  code { background: var(--paper-sunk); padding: .1rem .34rem; border-radius: 3px; border: 1px solid var(--rule-soft); }
+
+  .passes { display: grid; gap: .8rem; }
+  .pass {
+    display: grid; grid-template-columns: 3.1rem 1fr; gap: 0 1rem;
+    padding: 1.1rem 1.2rem; background: var(--paper-sunk);
+    border: 1px solid var(--rule-soft); border-left: 3px solid var(--accent); border-radius: 4px;
+  }
+  .pass-n { font-family: var(--mono); font-size: 1.5rem; font-weight: 300; color: var(--accent); line-height: 1; grid-row: span 2; }
+  .pass-t { font-weight: 700; font-size: .95rem; display: flex; flex-wrap: wrap; gap: .5rem; align-items: baseline; }
+  .pass-time { font-family: var(--mono); font-size: .68rem; font-weight: 400; color: var(--muted); border: 1px solid var(--rule); padding: .05rem .38rem; border-radius: 2px; }
+  .pass p { margin: .35rem 0 0; font-size: .93rem; color: var(--ink-soft); }
+  .pass.dim { border-left-color: var(--rule); opacity: .82; }
+  .pass.dim .pass-n { color: var(--muted); }
+
+  mark { padding: .06em .18em; border-radius: 2px; color: var(--ink); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  mark.a { background: var(--w-assume); }
+  mark.l { background: var(--w-limit); }
+  mark.s { background: var(--w-systems); }
+  mark.q { background: var(--w-quote); }
+
+  .marker-block { border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; margin: 0 0 1rem; }
+  .marker-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: .55rem;
+    padding: .6rem .9rem; border-bottom: 1px solid var(--rule-soft); font-size: .82rem;
+  }
+  .marker-head b { font-size: .92rem; }
+  .marker-dest { margin-left: auto; font-family: var(--mono); font-size: .78rem; color: var(--ink-soft); font-weight: 500; white-space: nowrap; }
+  .marker-body { padding: .85rem .9rem 1rem; }
+  .triggers { display: flex; flex-wrap: wrap; gap: .3rem; margin: 0 0 .85rem; padding: 0; list-style: none; }
+  .triggers li {
+    font-family: var(--mono); font-size: .8rem; padding: .14rem .45rem;
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--ink); background: var(--paper);
+  }
+  .specimen {
+    font-family: var(--serif); font-size: .97rem; line-height: 1.62;
+    padding-left: .85rem; border-left: 2px solid var(--rule); color: var(--ink-soft); margin: 0;
+  }
+  .specimen cite {
+    display: block; font-family: var(--sans); font-style: normal;
+    font-size: .82rem; color: var(--ink-soft); margin-top: .5rem; font-weight: 500;
+  }
+  .specimen cite::before { content: "— "; color: var(--muted); }
+
+  .scroll { overflow-x: auto; margin: 0 0 1.2rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .87rem; min-width: 30rem; }
+  th, td { text-align: left; padding: .55rem .7rem; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  th { font-size: .74rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-soft); border-bottom: 1px solid var(--rule); white-space: nowrap; }
+  td.num, th.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+  .hot td { background: color-mix(in srgb, var(--m-systems) 7%, transparent); }
+  .hot td:first-child { box-shadow: inset 2px 0 0 var(--accent); }
+
+  .callout {
+    border: 1px solid color-mix(in srgb, var(--m-systems) 35%, var(--rule));
+    background: color-mix(in srgb, var(--m-systems) 6%, transparent);
+    border-radius: 5px; padding: 1.1rem 1.2rem; margin: 0 0 1.2rem;
+  }
+  .callout .k { font-family: var(--mono); font-size: .74rem; letter-spacing: .09em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: .5rem; font-weight: 600; }
+  .callout p:last-child { margin-bottom: 0; }
+  .warn { border-color: color-mix(in srgb, var(--m-limit) 35%, var(--rule)); background: color-mix(in srgb, var(--m-limit) 6%, transparent); }
+  .warn .k { color: var(--m-limit); }
+
+  ul.plain, ol.plain { margin: 0 0 1.1rem; padding-left: 1.15rem; }
+  ul.plain li, ol.plain li { margin-bottom: .45rem; }
+  .codes { display: flex; flex-wrap: wrap; gap: .3rem; margin: 0 0 1.1rem; padding: 0; list-style: none; }
+  .codes li {
+    font-family: var(--mono); font-size: .8rem; padding: .18rem .48rem; border-radius: 2px;
+    background: var(--w-limit); border: 1px solid color-mix(in srgb, var(--m-limit) 30%, transparent);
+  }
+
+  /* ---- read-along steps ---- */
+  .step { display: grid; grid-template-columns: 2.2rem 1fr; gap: 0 1rem; margin: 0 0 1.9rem; }
+  .step-n {
+    font-family: var(--mono); font-size: .78rem; font-weight: 600; color: var(--paper);
+    background: var(--accent); border-radius: 3px; width: 1.75rem; height: 1.75rem;
+    display: grid; place-items: center; transform: translateY(.1rem);
+  }
+  .step-b h4 {
+    font-family: var(--sans); font-size: 1rem; font-weight: 700; margin: .15rem 0 .55rem; line-height: 1.35;
+  }
+  .step-b p { font-size: .95rem; margin-bottom: .7rem; }
+  .step-b p:last-child { margin-bottom: 0; }
+  .do {
+    font-family: var(--mono); font-size: .86rem; color: var(--ink); background: var(--paper-sunk);
+    border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+    padding: .5rem .7rem; border-radius: 3px; margin: 0 0 .8rem; overflow-x: auto; white-space: pre-wrap; word-break: break-all;
+  }
+
+  /* ---- interlinear gloss ---- */
+  .gloss { display: grid; gap: .1rem; margin: 0 0 1.3rem; }
+  .gloss-row { padding: .7rem 0; border-bottom: 1px solid var(--rule-soft); }
+  .gloss-row:last-child { border-bottom: none; }
+  .gloss-src { font-family: var(--serif); font-size: .98rem; line-height: 1.55; color: var(--ink); margin: 0 0 .35rem; }
+  .gloss-note {
+    font-size: .85rem; color: var(--ink-soft); margin: 0;
+    padding-left: .8rem; border-left: 2px solid var(--accent);
+  }
+  .gloss-note b { color: var(--ink); }
+
+  /* ---- glossary ---- */
+  .gbox { border: 1px solid var(--rule); border-radius: 5px; padding: .95rem 1.1rem 1.1rem; margin: 0 0 .9rem; }
+  .gbox > h4 {
+    font-family: var(--sans); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 .75rem; font-weight: 700;
+  }
+  dl.terms { margin: 0; display: grid; gap: .55rem; }
+  dl.terms > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: .2rem .9rem; align-items: baseline; }
+  dl.terms dt { font-family: var(--mono); font-size: .84rem; color: var(--ink); font-weight: 600; }
+  dl.terms dd { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+  @media (max-width: 38rem) { dl.terms > div { grid-template-columns: 1fr; } }
+
+  /* ---- file card ---- */
+  .filecard { border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; margin: 0 0 1.2rem; }
+  .filebar {
+    display: flex; align-items: center; gap: .5rem; padding: .5rem .8rem;
+    background: var(--paper-sunk); border-bottom: 1px solid var(--rule);
+    font-family: var(--mono); font-size: .8rem; color: var(--ink-soft);
+  }
+  .filebar b { color: var(--ink); font-weight: 600; }
+  pre.md {
+    margin: 0; padding: 1rem .9rem; overflow-x: auto;
+    font-family: var(--mono); font-size: .84rem; line-height: 1.68; color: var(--ink-soft);
+    background: var(--paper); tab-size: 2;
+  }
+  pre.md .h { color: var(--ink); font-weight: 700; }
+  pre.md .c { color: var(--m-quote); }
+  pre.md .k { color: var(--m-limit); }
+  pre.md .v { color: var(--accent); }
+
+  /* ---- source cards ---- */
+  .srclist { display: grid; gap: .7rem; margin: 0 0 1.3rem; }
+  .src {
+    border: 1px solid var(--rule); border-radius: 5px; padding: .85rem 1rem;
+    border-left: 3px solid var(--accent);
+  }
+  .src-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem .6rem; margin-bottom: .3rem; }
+  .src-top a { font-weight: 700; font-size: .95rem; text-decoration: none; }
+  .src-top a:hover { text-decoration: underline; }
+  .src-meta { font-family: var(--sans); font-size: .82rem; color: var(--ink-soft); }
+  .src p { font-size: .92rem; margin: .3rem 0 0; color: var(--ink-soft); }
+  .maps {
+    display: inline-block; font-family: var(--mono); font-size: .76rem;
+    background: var(--w-systems); border: 1px solid color-mix(in srgb, var(--m-systems) 35%, transparent);
+    padding: .08rem .4rem; border-radius: 2px; margin-top: .5rem; color: var(--ink);
+  }
+  .src.free { border-left-color: var(--m-quote); }
+  .src.free .maps { background: var(--w-quote); border-color: color-mix(in srgb, var(--m-quote) 35%, transparent); }
+  .verdict {
+    display: inline-block; font-family: var(--mono); font-size: .74rem; letter-spacing: .04em;
+    text-transform: uppercase; padding: .12rem .45rem; border-radius: 2px; white-space: nowrap; font-weight: 600;
+  }
+  .v-use  { background: var(--w-quote);  border: 1px solid color-mix(in srgb, var(--m-quote) 40%, transparent); }
+  .v-skip { background: var(--w-limit);  border: 1px solid color-mix(in srgb, var(--m-limit) 40%, transparent); }
+  .v-care { background: var(--w-assume); border: 1px solid color-mix(in srgb, var(--m-assume) 45%, transparent); }
+
+  footer { border-top: 1px solid var(--rule); padding-top: 1.4rem; margin-top: 4rem; font-size: .82rem; color: var(--muted); }
+  footer p { margin: 0 0 .4rem; }
+
+  @media (max-width: 34rem) {
+    .pass { grid-template-columns: 1fr; }
+    .pass-n { grid-row: auto; font-size: 1.1rem; }
+    .marker-dest { margin-left: 0; width: 100%; }
+    .step { grid-template-columns: 1fr; gap: .5rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">M1 · Literature baseline · 60 summaries by 27 Sep</p>
+    <h1>How to read a paper, and what to mark while you do it</h1>
+    <p class="standfirst">
+      You are not reading for comprehension. You are reading to fill twelve fields in
+      <code>TEMPLATE.md</code> — and to notice, across sixty papers, the thing the field
+      keeps failing to measure. Every mark you make has a destination.
+    </p>
+  </header>
+</div>
+
+<div class="legend-dock">
+  <div class="legend-inner">
+    <span class="legend-lab">Markers</span>
+    <span class="chip c-assume"><i></i>Assumption <small>§4</small></span>
+    <span class="chip c-limit"><i></i>Limitation <small>§7</small></span>
+    <span class="chip c-systems"><i></i>Systems <small>§6</small></span>
+    <span class="chip c-quote"><i></i>Quotable <small>§10</small></span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Never read front to back</h2></div>
+    <p class="prose">
+      A paper is not a story and reading it linearly is the slowest possible way to extract it.
+      Three passes, each with a decision at the end. Most papers stop after the second — deep-reading
+      everything is a way of feeling productive while covering a quarter of the ground.
+    </p>
+    <div class="passes">
+      <div class="pass">
+        <span class="pass-n">1</span>
+        <span class="pass-t">Triage <span class="pass-time">5 min</span></span>
+        <p>Title, abstract, conclusion, figures, section headings. Nothing else.
+           <strong>Decision:</strong> read · queue · exclude. An exclusion needs a written reason.</p>
+      </div>
+      <div class="pass">
+        <span class="pass-n">2</span>
+        <span class="pass-t">Structural <span class="pass-time">20 min</span></span>
+        <p>Problem, method, experimental setup, headline results, stated limitations.
+           Enough to write §1–§3, §5 and §7 and assign roles. <strong>This is where most papers end.</strong></p>
+      </div>
+      <div class="pass dim">
+        <span class="pass-n">3</span>
+        <span class="pass-t">Deep <span class="pass-time">1–3 hrs · selective</span></span>
+        <p>Only for foundational, directly competitive, or reproduction targets. Derivations,
+           assumptions, experimental validity — and what the evaluation <em>fails</em> to measure.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <span class="k">The arithmetic</span>
+      <p>60 summaries · 7 weeks · roughly <strong>9 per week</strong>. At 25 minutes each that is
+      under four hours a week. It only works if you stop at Pass 2 by default and spend Pass 3
+      deliberately, on maybe six papers total.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>Four markers, four destinations</h2></div>
+    <p class="prose">
+      The rule that makes highlighting worth doing: <strong>a mark you cannot file is a mark you
+      should not have made.</strong> Each colour belongs to one section of the template. When you
+      sit down to write, you are transcribing, not re-reading.
+    </p>
+
+    <div class="marker-block">
+      <div class="marker-head">
+        <span class="chip c-assume"><i></i>Assumption</span><b>What must be true for this to work</b>
+        <span class="marker-dest">→ §4</span>
+      </div>
+      <div class="marker-body">
+        <ul class="triggers"><li>we assume</li><li>is assumed</li><li>for simplicity</li><li>we consider the case</li><li>it is expected that</li><li>ideal</li><li>generally</li><li>typically</li></ul>
+        <p class="specimen">
+          Every FL paper assumes clients can <mark class="a">complete a local training round within the
+          aggregation window</mark>. Almost none say so, and almost none say what happens when one cannot.
+          <cite>The unstated ones are worth more than the stated ones</cite>
+        </p>
+      </div>
+    </div>
+
+    <div class="marker-block">
+      <div class="marker-head">
+        <span class="chip c-limit"><i></i>Limitation</span><b>What the field admits is broken</b>
+        <span class="marker-dest">→ §7 · drives G2</span>
+      </div>
+      <div class="marker-body">
+        <ul class="triggers"><li>however</li><li>lack of</li><li>need for</li><li>remains challenging</li><li>is limited</li><li>open problem</li><li>future work</li><li>we do not consider</li></ul>
+        <p class="specimen">
+          <mark class="l">Lack of sufficient real-world datasets, simulator, and pre-trained base model.</mark>
+          There is a need for more real-world datasets…
+          <cite>Chellapandi et al. 2023 · §IV-A, p. 6</cite>
+        </p>
+      </div>
+    </div>
+
+    <div class="marker-block">
+      <div class="marker-head">
+        <span class="chip c-systems"><i></i>Systems constraint</span><b>The seven axes — and their absence</b>
+        <span class="marker-dest">→ §6</span>
+      </div>
+      <div class="marker-body">
+        <ul class="triggers"><li>latency</li><li>energy</li><li>power</li><li>bandwidth</li><li>communication cost</li><li>memory</li><li>real-time</li><li>deterministic</li><li>deadline</li><li>throughput</li><li>scale</li><li>fault</li></ul>
+        <p class="specimen">
+          Huge CAV participation in the FL could increase the <mark class="s">solve time</mark>,
+          <mark class="s">memory utilization</mark>, and therefore the <mark class="s">computational power</mark>
+          for the global model update.
+          <cite>Chellapandi et al. 2023 · §IV-A, p. 6</cite>
+        </p>
+      </div>
+    </div>
+
+    <div class="marker-block">
+      <div class="marker-head">
+        <span class="chip c-quote"><i></i>Quotable</span><b>Sentences you might actually cite</b>
+        <span class="marker-dest">→ §10</span>
+      </div>
+      <div class="marker-body">
+        <p class="specimen" style="margin-bottom:.8rem">
+          <mark class="q">"the performance is not certain when exposed to new environments or unseen conditions"</mark>
+          <cite>Chellapandi et al. 2023 · Abstract, p. 1</cite>
+        </p>
+        <p style="margin:0; font-size:.9rem; color:var(--ink-soft)">
+          Two to four per paper. Transcribe verbatim <em>with the page number</em> the moment you mark it.
+          A quotation reconstructed later from memory is a paraphrase wearing quotation marks.
+        </p>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <span class="k">The mistake to avoid</span>
+      <p>Pasting the abstract into §1. Verbatim text goes to <strong>§10 with a location</strong>, always.
+      §1 is your paragraph, in their framing. Text that starts as an unmarked copy-paste is how
+      accidental plagiarism appears six weeks later, when you no longer remember which words were yours.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>The audit that is actually yours</h2></div>
+    <p class="prose">
+      Seven axes, rated on every paper: <strong>measured · modelled · assumed away · ignored</strong>.
+      Most ML papers never apply this lens, which is precisely why it is worth applying. Four years
+      of making software run on constrained automotive silicon is not a footnote here — it is the
+      reason you can see what a machine-learning reader cannot.
+    </p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Axis</th><th>What counts as <span class="mono">measured</span></th><th>Usual reality</th></tr></thead>
+        <tbody>
+          <tr><td>Latency</td><td>Wall-clock, reported with variance</td><td>Round count only</td></tr>
+          <tr><td>Energy / power</td><td>Joules or watts on real hardware</td><td>Ignored</td></tr>
+          <tr><td>Bandwidth</td><td>Bytes on the wire per round</td><td>Modelled</td></tr>
+          <tr><td>Memory</td><td>Peak resident on the client device</td><td>Ignored</td></tr>
+          <tr class="hot"><td>Determinism / real-time</td><td>Deadlines stated and met</td><td><strong>Almost always absent</strong></td></tr>
+          <tr><td>Scale</td><td>Client count varied, not fixed at 10</td><td>Simulated</td></tr>
+          <tr><td>Fault tolerance</td><td>Dropout / failure injected</td><td>Assumed away</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">
+      <span class="k">Discipline</span>
+      <p>One paper omitting determinism is an observation. Five <em>independent</em> papers omitting it is
+      evidence, and only then may a gap be proposed. Record the rating, resist the conclusion.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Read along — Chellapandi 2023, start to finish</h2></div>
+    <p class="prose">
+      Nine pages, one sitting, roughly 25 minutes. Follow this exactly once and the pattern
+      transfers to every paper after it.
+    </p>
+
+    <div class="step">
+      <span class="step-n">0</span>
+      <div class="step-b">
+        <h4>Open the file</h4>
+        <p class="do">D:\sem3_4\references\2303.10677v1.pdf</p>
+        <p>Open your summary file beside it, in a second window. You will be writing into it as you
+        go, not afterwards. Writing afterwards is how detail evaporates.</p>
+        <p class="do">D:\sem3_4\ai-systems-lab\literature\summaries\chellapandi2023survey.md</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-n">1</span>
+      <div class="step-b">
+        <h4>Read the title — every word is load-bearing</h4>
+        <p class="specimen" style="margin-bottom:.8rem">A Survey of Federated Learning for Connected and Automated Vehicles</p>
+        <dl class="terms" style="margin-bottom:.8rem">
+          <div><dt>A Survey of</dt><dd>The paper <b>type</b>. No new method, no experiments of its own. Expect a taxonomy table and a challenges section — and read those two first.</dd></div>
+          <div><dt>Federated Learning</dt><dd>The <b>method family</b> being surveyed.</dd></div>
+          <div><dt>for</dt><dd>Direction of application. FL is being applied <b>to</b> vehicles — vehicles are the domain, not the contribution.</dd></div>
+          <div><dt>Connected and Automated</dt><dd>Not "autonomous". <b>Connected</b> is doing work: without connectivity there is no federation. The word tells you connectivity is assumed throughout.</dd></div>
+        </dl>
+        <p>Set <code>Roles: survey</code> in your header block. That single decision changes how you read
+        the rest — §5 Evaluation will be <code>N/A</code>, and §3 will be a taxonomy rather than a method.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-n">2</span>
+      <div class="step-b">
+        <h4>Read the author block — this one matters more than usual</h4>
+        <p>Four authors, all at <b>College of Engineering, Purdue University</b>. One group, one
+        laboratory, one point of view.</p>
+        <div class="callout warn" style="margin-bottom:0">
+          <span class="k">Catch this now</span>
+          <p>Your index already holds <em>two</em> Chellapandi surveys —
+          <code>chellapandi2023survey</code> and <code>chellapandi2023federated</code> — with
+          overlapping authors from the same lab. G1 wants ≥2 surveys and they both count.
+          <strong>Stage 2 of the gap protocol wants five <em>independent</em> papers, and these are one
+          opinion expressed twice.</strong></p>
+          <p>Note it in §11 now. Finding this in week two costs a sentence; finding it during a gap
+          proposal costs a fortnight.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-n">3</span>
+      <div class="step-b">
+        <h4>Read the abstract — one sentence at a time, each one has a job</h4>
+        <p>An abstract is six sentences doing six different jobs. Learn to recognise them and you
+        can triage any paper in ninety seconds.</p>
+        <div class="gloss">
+          <div class="gloss-row">
+            <p class="gloss-src">"Connected and Automated Vehicles (CAVs) are one of the emerging technologies… leading to a safe, efficient, and sustainable transportation system."</p>
+            <p class="gloss-note"><b>Job: motivation.</b> Boilerplate. Every CAV paper opens this way. Read fast, mark nothing.</p>
+          </div>
+          <div class="gloss-row">
+            <p class="gloss-src">"…machine learning models in CAVs are <mark class="q">solely trained using the local vehicle data, and the performance is not certain when exposed to new environments or unseen conditions</mark>."</p>
+            <p class="gloss-note"><b>Job: the problem.</b> This is your §1. Local-only training generalises badly. <span class="chip c-quote"><i></i>Green</span> — this is quotable.</p>
+          </div>
+          <div class="gloss-row">
+            <p class="gloss-src">"Federated learning (FL) is an effective solution… enables a collaborative model development with multiple vehicles in a distributed learning framework."</p>
+            <p class="gloss-note"><b>Job: the proposed answer.</b> Note "effective" is asserted, not shown — a survey inherits its field's optimism.</p>
+          </div>
+          <div class="gloss-row">
+            <p class="gloss-src">"FL enables CAVs to learn from a wide range of driving environments and improve their overall performance while ensuring the privacy and security of local vehicle data."</p>
+            <p class="gloss-note"><b>Job: the two claimed benefits</b> — generalisation and privacy. Every paper in this cluster will claim one or both. Worth remembering as the field's standard pitch.</p>
+          </div>
+          <div class="gloss-row">
+            <p class="gloss-src">"In this paper, we review the progress accomplished by researchers in applying FL to CAVs."</p>
+            <p class="gloss-note"><b>Job: scope.</b> Confirms survey.</p>
+          </div>
+          <div class="gloss-row">
+            <p class="gloss-src">"A broader view of the various <b>data modalities and algorithms</b>… Specific <b>applications</b> of FL are reviewed in detail, and an analysis of the <b>challenges</b> and future scope…"</p>
+            <p class="gloss-note"><b>Job: the map.</b> This is the trick — the last abstract sentence names the sections. Modalities and algorithms → §II. Applications → §III. Challenges → §IV. You now know where everything is without reading the contents page.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-n">4</span>
+      <div class="step-b">
+        <h4>Jump to Table II, page 5 — the taxonomy, and your §3</h4>
+        <p>Skip §I and §II for now. Table II is the densest thing in the paper: thirteen studies from
+        2020–2023 across six columns.</p>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Column</th><th>What it tells you</th><th>What is dominant</th></tr></thead>
+            <tbody>
+              <tr><td>Data Modality</td><td>What the vehicle senses</td><td>RGB image, by a wide margin</td></tr>
+              <tr><td>Application</td><td>The task</td><td>Steering angle, object detection, driver monitoring</td></tr>
+              <tr><td>Base Model</td><td>The neural network</td><td>CNN variants; LSTM for time series</td></tr>
+              <tr class="hot"><td>FL Algorithm</td><td>How updates are combined</td><td><strong>FedAvg, in nearly every row</strong></td></tr>
+              <tr><td>Dataset</td><td>What it was trained on</td><td>Public benchmarks, plus "self-collected"</td></tr>
+              <tr><td>Time</td><td>Year</td><td>2020–2023, clustered late</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Copy this six-column structure straight into your §3. A survey's taxonomy <em>is</em> its method.</p>
+        <p><b>Read the FL Algorithm column twice.</b> Almost everything is FedAvg or a light variant.
+        That single observation tells you the field's methodological centre of gravity — and any
+        paper you eventually write will be compared against FedAvg.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-n">5</span>
+      <div class="step-b">
+        <h4>Go to §IV, page 6 — the challenges, and your §7</h4>
+        <p>One page. Eight bolded lead sentences, each a named challenge. Highlight
+        <span class="chip c-limit"><i></i>every bolded lead</span> — four minutes, and most of §7 is done.</p>
+        <ul class="plain" style="font-size:.93rem">
+          <li><b>A · Resource limitations</b> — massive participation drives solve time, memory, compute · no real-world datasets, simulator, or pre-trained base model</li>
+          <li><b>B · Imperfect methodology</b> — privacy and security · no robust vehicle selection or resource allocation · catastrophic forgetting · no fairness or incentive mechanism</li>
+          <li><b>C · Inadequate evaluation</b> — new vehicles cannot judge FL suitability · no high-capability diagnostics for faulty sensors</li>
+        </ul>
+        <ul class="codes">
+          <li>sim-only</li><li>no-real-world-data</li><li>comm-cost</li><li>no-client-selection</li>
+          <li>catastrophic-forgetting</li><li>no-incentive-mechanism</li><li>cold-start-clients</li><li>no-fault-detection</li>
+        </ul>
+        <p style="font-size:.93rem">Reuse these codes on the next paper wherever they fit. A new code should
+        mean a genuinely new theme, not a rephrasing — inflating the vocabulary keeps the G2 curve
+        artificially high and hides the moment the field stops surprising you.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-n">6</span>
+      <div class="step-b">
+        <h4>Now the blue pass over §IV — and what only you will see</h4>
+        <p>Run the <span class="chip c-systems"><i></i>systems</span> marker through that same page.
+        It names <em>solve time</em>, <em>memory utilization</em>, <em>computational power</em>,
+        <em>communication costs</em>.</p>
+        <p>It never once names <strong>determinism, real-time deadlines, or energy</strong> — in a survey
+        about vehicles, where compute is a certified, mixed-criticality, hard-real-time platform, and
+        where a training job competing with a perception job has a safety consequence.</p>
+        <p>Rate <code>Determinism / real-time</code> as <code>ignored</code> in §6 and write the evidence:
+        <em>"§IV enumerates resource limits but names no timing or energy constraint."</em>
+        Then move to the next paper and see whether it happens again.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-n">7</span>
+      <div class="step-b">
+        <h4>Backfill §1 and §2 from the front matter — five minutes</h4>
+        <p>Only now go back to page 1. You know what the paper does, so §I reads in a fraction of the
+        time. Two facts there are worth keeping: vehicles generate <b>1–2 TB per vehicle per day</b>,
+        and <b>GDPR</b> is why centralised collection is not an option. Together they are the entire
+        justification for federation, in two numbers.</p>
+        <p>Glance at <b>Table I</b> (p. 2) — it compares on-vehicle, centralised and federated learning
+        on eight features. That is your one-paragraph answer to "why federated rather than
+        centralised", and it is worth a <span class="chip c-quote"><i></i>green</span> mark.</p>
+        <p><b>Fig. 1</b> (p. 2) is the system picture: each vehicle senses, trains locally, sends a
+        model to the server; the server aggregates and sends a general model back. If you can redraw
+        that from memory, you understand FL.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Every term in this paper, decoded</h2></div>
+    <p class="prose">
+      Nothing here should be a word you skim past. Most of it recurs in every paper in the cluster,
+      so this is a one-time cost.
+    </p>
+
+    <div class="gbox">
+      <h4>Notation — how a citation points at a place in a paper</h4>
+      <p style="font-size:.92rem; margin:0 0 .9rem; color:var(--ink-soft)">
+        Every quotation you record needs a <b>location</b>, so that you or an examiner can go back and
+        check it. That location is written in a compact shorthand. Take one apart:
+      </p>
+      <p class="do" style="font-size:1rem; margin-bottom:.9rem">Chellapandi et al. 2023 · §IV-A, p. 6</p>
+      <dl class="terms">
+        <div><dt>Chellapandi</dt><dd>Surname of the <b>first author</b> only.</dd></div>
+        <div><dt>et al.</dt><dd>Latin <i>et alii</i>, "and others". Used when there are three or more authors, so you name the first and abbreviate the rest.</dd></div>
+        <div><dt>2023</dt><dd>Year of publication.</dd></div>
+        <div><dt>§</dt><dd>The <b>section sign</b>. Read it aloud as "section". <code>§IV</code> means "Section 4".</dd></div>
+        <div><dt>IV</dt><dd>Roman numeral 4. Papers in this venue number their sections I, II, III, IV, V rather than 1, 2, 3. <span class="mono">I=1 · II=2 · III=3 · IV=4 · V=5 · VI=6 · VII=7 · VIII=8 · IX=9 · X=10</span></dd></div>
+        <div><dt>-A</dt><dd>Subsection A within that section. So <code>§IV-A</code> is "Section 4, subsection A" — in this paper, <i>Resource Limitations</i>.</dd></div>
+        <div><dt>p. 6</dt><dd>Page 6. <code>pp. 6–8</code> would mean pages 6 to 8. The full stop is part of the abbreviation.</dd></div>
+      </dl>
+      <p style="font-size:.92rem; margin:.9rem 0 0; color:var(--ink-soft)">
+        So <code>§IV-A, p. 6</code> means: <b>Section 4, subsection A, printed page 6.</b> Write it that
+        way and anyone can find the sentence in under ten seconds.
+      </p>
+      <dl class="terms" style="margin-top:.9rem">
+        <div><dt>[12]</dt><dd>A numbered reference — look up entry 12 in the reference list at the end.</dd></div>
+        <div><dt>Fig. · Tab.</dt><dd>Figure and Table. <code>Fig. 1</code> is the first figure.</dd></div>
+        <div><dt>arXiv:2303.<br>10677v1</dt><dd>An arXiv identifier. <code>2303</code> = March 2023, then the sequence number, then <code>v1</code> = version 1. Later versions exist as v2, v3 — <b>always record which one you read.</b></dd></div>
+        <div><dt>DOI</dt><dd>Digital Object Identifier — a permanent link to a published work. Prefer it over a URL, which rots.</dd></div>
+      </dl>
+    </div>
+
+    <div class="gbox">
+      <h4>Federated learning — the core machinery</h4>
+      <dl class="terms">
+        <div><dt>FL</dt><dd>Federated Learning. Train a shared model across many devices <b>without moving their data</b>. Coined by Google, first shipped in Gboard keyboard prediction.</dd></div>
+        <div><dt>CL</dt><dd>Centralised Learning. The alternative: ship all data to one server. Blocked here by volume and privacy law.</dd></div>
+        <div><dt>Client</dt><dd>One participating device. Here, one vehicle.</dd></div>
+        <div><dt>Local model</dt><dd>The copy each client trains on its own data.</dd></div>
+        <div><dt>Global model</dt><dd>The single model the server maintains by combining client updates.</dd></div>
+        <div><dt>Aggregation</dt><dd>The server's combining step — usually a weighted average of client weights.</dd></div>
+        <div><dt>Comm. round</dt><dd>One full cycle: server sends model → clients train → clients send updates → server aggregates. Progress is counted in rounds, not epochs.</dd></div>
+        <div><dt>FedAvg</dt><dd>The default algorithm. Clients run several local SGD steps, then the server averages their weights, weighted by dataset size. Fewer rounds than sending every gradient.</dd></div>
+        <div><dt>FedSGD</dt><dd>Stricter variant — one gradient step per round. More rounds, more communication.</dd></div>
+        <div><dt>FedProx</dt><dd>FedAvg plus a penalty that stops a client drifting too far from the global model. Helps when clients' data differ.</dd></div>
+        <div><dt>Async FL</dt><dd>Asynchronous — the server does not wait for all clients. Directly relevant to slow or intermittently connected vehicles.</dd></div>
+        <div><dt>Heterogeneous</dt><dd>Clients differ — in data, sensors, or compute. The central difficulty of the whole field.</dd></div>
+        <div><dt>non-IID</dt><dd>Not independent and identically distributed: each vehicle sees its own biased slice of the world. Averaging models trained on different distributions degrades the result.</dd></div>
+        <div><dt>Personalisation</dt><dd>Adapting the global model back to one client's conditions.</dd></div>
+      </dl>
+    </div>
+
+    <div class="gbox">
+      <h4>Models and training</h4>
+      <dl class="terms">
+        <div><dt>SGD</dt><dd>Stochastic Gradient Descent. Step the weights downhill on a small batch at a time.</dd></div>
+        <div><dt>Epoch</dt><dd>One full pass over a client's local data.</dd></div>
+        <div><dt>Learning rate η</dt><dd>How big each downhill step is.</dd></div>
+        <div><dt>Loss function</dt><dd>The number being minimised — how wrong the model currently is.</dd></div>
+        <div><dt>Convergence</dt><dd>The point where more rounds stop improving the model.</dd></div>
+        <div><dt>CNN</dt><dd>Convolutional Neural Network — the standard architecture for images.</dd></div>
+        <div><dt>RNN / LSTM</dt><dd>Recurrent nets for sequences; LSTM handles long-range dependencies. Used for trajectory and vehicle-state time series.</dd></div>
+        <div><dt>RL / Deep RL</dt><dd>Reinforcement Learning — learn by trial and error against an environment. Used here for collision avoidance.</dd></div>
+        <div><dt>YOLO, ResNet,<br>U-Net, LeNet-5</dt><dd>Named CNN architectures appearing in Table II. Treat as labels; you do not need their internals to summarise this paper.</dd></div>
+      </dl>
+    </div>
+
+    <div class="gbox">
+      <h4>The vehicle</h4>
+      <dl class="terms">
+        <div><dt>CAV</dt><dd>Connected and Automated Vehicle.</dd></div>
+        <div><dt>ECU</dt><dd>Electronic Control Unit — an in-vehicle computer. You have shipped software on these.</dd></div>
+        <div><dt>V2X</dt><dd>Vehicle-to-Everything communication.</dd></div>
+        <div><dt>GNSS</dt><dd>Satellite positioning (GPS is one GNSS).</dd></div>
+        <div><dt>LiDAR</dt><dd>Laser ranging; outputs a 3D <b>point cloud</b>. Accurate in bad weather, but large and expensive to transmit.</dd></div>
+        <div><dt>RADAR</dt><dd>Radio ranging. Robust, coarse.</dd></div>
+        <div><dt>IMU</dt><dd>Inertial Measurement Unit — accelerometers and gyroscopes.</dd></div>
+        <div><dt>Modality</dt><dd>A <b>kind</b> of sensor data: image, LiDAR point cloud, vehicle status time series. "Multi-modal" means several at once.</dd></div>
+        <div><dt>Perception</dt><dd>Turning sensor data into an understanding of the scene.</dd></div>
+        <div><dt>Semantic<br>segmentation</dt><dd>Labelling every pixel by what it belongs to — road, car, pedestrian.</dd></div>
+      </dl>
+    </div>
+
+    <div class="gbox">
+      <h4>Privacy and security</h4>
+      <dl class="terms">
+        <div><dt>GDPR</dt><dd>EU data protection regulation. The legal reason centralised collection fails.</dd></div>
+        <div><dt>HE</dt><dd>Homomorphic Encryption — compute on encrypted data without decrypting it.</dd></div>
+        <div><dt>SMPC</dt><dd>Secure Multi-Party Computation — several parties jointly compute without revealing their inputs.</dd></div>
+        <div><dt>DP</dt><dd>Differential Privacy — add calibrated noise so no individual record can be recovered. Costs accuracy.</dd></div>
+        <div><dt>Secure<br>aggregation</dt><dd>Server learns the <b>sum</b> of client updates but not any single one.</dd></div>
+        <div><dt>Blockchain</dt><dd>Decentralised ledger, proposed here to remove the trusted central server.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>What "done" looks like</h2></div>
+    <p class="prose">
+      The finished file for this paper, abridged. Not to copy — to compare against once you have
+      written your own. The value is in the sections nobody else fills: <b>§4 assumptions you inferred</b>,
+      <b>§6 the audit</b>, and <b>§9 what it rules in and out</b>.
+    </p>
+
+    <div class="filecard">
+      <div class="filebar"><b>chellapandi2023survey.md</b> · summaries/</div>
+      <pre class="md"><span class="h"># chellapandi2023survey</span>
+
+<span class="h">**Cluster:**</span> sdv-automotive · <span class="h">**Roles:**</span> survey · <span class="h">**Tier:**</span> P · <span class="h">**Relevance:**</span> 4/5
+
+<span class="h">## 1 · Problem</span>
+ML in CAVs is trained only on one vehicle's own data, so behaviour in
+unseen conditions is unpredictable. Pooling the data centrally is not
+available: vehicles produce 1-2 TB/day each, and GDPR-class regulation
+forbids moving it. FL is offered as the way to train across a fleet
+without the data leaving the vehicle.
+
+<span class="h">## 2 · Core idea</span>
+A survey, not a method. Organises FL-for-CAV along four axes - data
+modality, security technique, FL algorithm, application - and closes
+with a three-part challenge taxonomy. Its value here is Table II and
+Section IV, not its argument.
+
+<span class="h">## 3 · Method</span>
+Table II, p.5 - 13 studies, 2020-2023, six columns:
+  Literature | Year | Data Modality | Application | Base Model |
+  FL Algorithm | Dataset
+Dominant values: RGB image; steering/detection/driver-monitoring;
+CNN variants + LSTM; <span class="v">FedAvg in nearly every row</span>.
+Security techniques (II-B): HE, SMPC, DP, blockchain.
+
+<span class="h">## 4 · Assumptions</span>
+- Data distribution: heterogeneity acknowledged; non-IID never
+  formally treated
+- Device capability: vehicles can train locally - <span class="v">no compute,
+  memory or thermal budget is ever stated</span>
+- Network: connectivity continuously available
+- Availability: vehicles reachable each round
+- Trust: server honest-but-curious; attacks noted in II-B
+- Scale: "massively parallel" asserted, never quantified
+- <span class="v">Other (inferred, unstated): training runs on the vehicle without
+  contending with safety-critical workloads for CPU or memory</span>
+
+<span class="h">## 5 · Evaluation</span>
+N/A - survey. Field-standard datasets recorded in Table II; accuracy
+is the near-universal metric. <span class="v">No paper in the table reports latency
+or energy.</span>
+
+<span class="h">## 6 · Systems-constraints audit</span>
+| Axis        | Rating       | Evidence                              |
+| Latency     | modelled     | "solve time" IV-A, never measured     |
+| Energy      | <span class="k">ignored</span>      | absent from the paper entirely        |
+| Bandwidth   | modelled     | comm. cost discussed II-A, IV-A       |
+| Memory      | modelled     | "memory utilization" IV-A             |
+| <span class="k">Determinism  | ignored      | IV lists resource limits, no timing</span>
+| Scale       | modelled     | "massively parallel", unquantified    |
+| Fault tol.  | modelled     | diagnostics named as a need, IV-C     |
+
+<span class="h">## 7 · Limitations</span>
+Stated (IV): resource cost at scale · no real-world datasets or
+simulator · privacy/security · no robust client selection ·
+catastrophic forgetting · no incentive mechanism · cold-start
+vehicles · no fault diagnostics.
+Exhibited: <span class="v">treats the vehicle as a generic edge device. No
+engagement with automotive compute as a certified, mixed-criticality,
+real-time platform.</span>
+
+<span class="h">**Limitation codes:**</span> <span class="k">sim-only | no-real-world-data | comm-cost |
+no-client-selection | catastrophic-forgetting | no-incentive-mechanism |
+cold-start-clients | no-fault-detection</span>
+
+<span class="h">## 9 · Relevance here</span>
+Rules IN the systems angle: this field measures accuracy and
+communication, not time or energy, and does not model the platform the
+training actually runs on. Rules OUT "apply FL to vehicles" as novelty
+- 13 studies did it by 2023.
+
+<span class="h">## 10 · Quotations</span>
+&gt; "solely trained using the local vehicle data, and the performance is
+&gt; not certain when exposed to new environments" - Abstract, p.1
+&gt; "Lack of sufficient real-world datasets, simulator, and pre-trained
+&gt; base model." - IV-A, p.6
+
+<span class="h">## 11 · Follow-ups</span>
+Indexed already: mcmahan2016communicationefficient (FedAvg),
+kairouz2021advances.
+<span class="k">CAUTION: chellapandi2023federated is the same Purdue group. Counts for
+G1 surveys; does NOT count as independent evidence under Stage 2.</span>
+Queue: a non-FL SDV architecture paper - this cluster is 8/10 FL and
+that is the archive's bias, not the field's shape.
+
+<span class="h">## 12 · Open questions</span>
+Does any FL-for-vehicles work state a training-time budget? If none
+does, that absence is the thing to chase.</pre>
+    </div>
+
+    <div class="callout">
+      <span class="k">The three lines that matter</span>
+      <p>Everything above is ordinary except the marked lines: the <b>inferred unstated assumption</b> in §4,
+      <b>determinism rated ignored</b> in §6, and the <b>same-group caution</b> in §11. Those are not
+      transcription — they are judgement, and they are the only part of a summary that a competent
+      reader could not have produced from the abstract.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Where this method comes from</h2></div>
+    <p class="prose">
+      Your protocol was not invented from nothing — it is an unusually strict assembly of four
+      established methods. Reading the originals is worth two hours, because each one explains
+      <em>why</em> a gate exists, and each is citable in the methodology chapter you will eventually
+      have to write. All four below are free.
+    </p>
+
+    <div class="srclist">
+      <div class="src free">
+        <div class="src-top">
+          <a href="http://ccr.sigcomm.org/online/files/p83-keshavA.pdf">Keshav — How to Read a Paper</a>
+          <span class="src-meta">ACM SIGCOMM CCR 37(3), 2007 · free PDF</span>
+        </div>
+        <p>Four pages. The origin of the three-pass method in §01, from fifteen years of doing it at
+        Waterloo. Its second half — using the same method to conduct a literature survey — is the part
+        most people never reach, and it is directly about what you are doing now.</p>
+        <span class="maps">→ §01 three passes · read this first</span>
+      </div>
+
+      <div class="src free">
+        <div class="src-top">
+          <a href="https://dl.acm.org/doi/abs/10.1145/2601248.2601268">Wohlin — Guidelines for Snowballing in Systematic Literature Studies</a>
+          <span class="src-meta">EASE '14 · DOI 10.1145/2601248.2601268</span>
+        </div>
+        <p>The methodological citation for <b>G3 citation closure</b>. Defines backward and forward
+        snowballing as a rigorous procedure with a start set, iterations, and stopping conditions —
+        and replicates a published review to show it works. Software-engineering venue, so the
+        vocabulary will already be yours.</p>
+        <span class="maps">→ G3 · cite this when you document the closure search</span>
+      </div>
+
+      <div class="src free">
+        <div class="src-top">
+          <a href="https://web.njit.edu/~egan/Writing_A_Literature_Review.pdf">Webster &amp; Watson — Analyzing the Past to Prepare for the Future</a>
+          <span class="src-meta">MIS Quarterly 26(2), 2002 · free PDF</span>
+        </div>
+        <p>Where the <b>concept matrix</b> comes from, and the argument for <b>concept-centric</b> rather
+        than author-centric reviews — organise by idea, not by "Smith found X, then Jones found Y".
+        Your <code>limitation_codes</code> field is a concept matrix in disguise. There is a
+        <a href="https://www.iwi.uni-hannover.de/fileadmin/iwi/Lehre/Wissenschaftliches_Arbeiten_fuer_Studierende/Watson_Webster_2020_Analysing_the_past_to_prepare_for_the_future_Writing_a_literature_review_A_roadmap_for_release_2_0.pdf">2020
+        update</a> by the same authors.</p>
+        <span class="maps">→ cluster syntheses · limitation_codes</span>
+      </div>
+
+      <div class="src">
+        <div class="src-top">
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950584908001390">Kitchenham et al. — Systematic Literature Reviews in Software Engineering</a>
+          <span class="src-meta">Information and Software Technology, 2009</span>
+        </div>
+        <p>The SLR tradition your gates descend from: protocol written before searching, explicit
+        inclusion and exclusion criteria, documented search strings. Skim rather than read — you have
+        already implemented most of it, more strictly than most published reviews manage.</p>
+        <span class="maps">→ background · lower priority</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="k">Do this while you are there</span>
+      <p>Index Keshav, Wohlin and Webster &amp; Watson into the <code>methodology</code> cluster.
+      <code>lit gates</code> skips that cluster, so it costs you nothing in gate arithmetic — and when
+      you write the methodology chapter, the citations are already verified and in the BibTeX.</p>
+      <p class="mono" style="font-size:.78rem; margin-top:.6rem">python -m tools.lab lit add --doi 10.1145/2601248.2601268 --cluster methodology</p>
+    </div>
+
+    <h3>The channel — what it is good for, and what it is not</h3>
+    <p class="prose">
+      <a href="https://www.youtube.com/@DrAndyStapleton">Andy Stapleton</a> — PhD in chemistry, left
+      academia in 2017, ~288k subscribers, also writes at
+      <a href="https://academiainsider.com/">Academia Insider</a>. I have read the site rather than
+      watched the videos, so treat this as a read on the channel's shape, not a review of any
+      particular one.
+    </p>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Topic</th><th>Verdict</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Supervisor relationship, motivation, isolation, burnout, viva prep</td>
+            <td><span class="verdict v-use">Use it</span></td>
+            <td>Genuinely good, and your repository contains <em>nothing</em> on any of it. This is the real value of the channel to you.</td>
+          </tr>
+          <tr>
+            <td>Writing habits, beating the blank page, thesis structure</td>
+            <td><span class="verdict v-use">Use it</span></td>
+            <td>Complements Zobel and Booth, which you already have indexed but have not read.</td>
+          </tr>
+          <tr>
+            <td>Tool walkthroughs — Litmaps, Zotero, reference managers</td>
+            <td><span class="verdict v-care">Careful</span></td>
+            <td>Useful as demos. Adopt the tool, not the workflow — yours is already defined.</td>
+          </tr>
+          <tr class="hot">
+            <td>"How to find a research gap", "how to do a literature review"</td>
+            <td><span class="verdict v-skip">Skip</span></td>
+            <td><strong>Following it would be a downgrade.</strong> See below.</td>
+          </tr>
+          <tr>
+            <td>AI tools that summarise papers for you</td>
+            <td><span class="verdict v-skip">Skip</span></td>
+            <td>Incompatible with your citation-integrity policy. See the warning below.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="k">Why to skip the gap-finding advice specifically</span>
+      <p>General advice defines a literature gap as "an area that has not been studied, or lacks
+      substantial inquiry". That is written for someone with no system at all, and it is close to
+      what your own <code>gap-validation-protocol.md</code> lists as its <strong>first
+      anti-pattern</strong>: <em>"No one has applied X to Y — novelty of combination is not
+      contribution."</em></p>
+      <p>Your bar is five independent papers, a documented counter-evidence search, an adversarial
+      self-review and pre-committed kill criteria. Generic advice would let you declare a gap in an
+      afternoon. <strong>You already have the stricter method; do not trade down to the popular
+      one.</strong> That is not a criticism of the channel — it is aimed at a much broader audience
+      than a supervised M.Tech with a script-checked protocol.</p>
+    </div>
+
+    <h3>Tools worth adding</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Tool</th><th>What it does</th><th>Fits where</th></tr></thead>
+        <tbody>
+          <tr class="hot">
+            <td><a href="https://www.connectedpapers.com/">Connected Papers</a></td>
+            <td>One seed paper → a visual neighbourhood built from co-citation and bibliographic coupling</td>
+            <td><strong>G3 closure.</strong> Finds work that never cites you directly</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.litmaps.com/">Litmaps</a></td>
+            <td>Interactive citation maps; acquired Research Rabbit in Nov 2025</td>
+            <td>G3 · tracking a cluster as it grows</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.semanticscholar.org/">Semantic Scholar</a> · <a href="https://openalex.org/">OpenAlex</a></td>
+            <td>Citation graphs with open APIs</td>
+            <td>Already named in your G3 criterion. Scriptable</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.zotero.org/">Zotero</a></td>
+            <td>Reference manager, BibTeX export</td>
+            <td>Optional — <code>lit bib</code> already does this from the index</td>
+          </tr>
+          <tr>
+            <td><a href="https://elicit.com/">Elicit</a></td>
+            <td>Extracts structured tables across 50–200 papers</td>
+            <td><span class="verdict v-care">Discovery only</span> — see below</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="k">The one hard rule about AI extraction tools</span>
+      <p>Use them to <strong>find</strong> papers. Never to <strong>fill</strong> a summary.</p>
+      <p>Your <code>citation-integrity.md</code> requires that quotations be transcribed from the
+      source and that metadata never be filled from memory — and a model's memory is exactly what a
+      generated summary is. A plausible sentence with a page number that nobody checked is the single
+      most expensive kind of error in a thesis, because it survives every review until an examiner
+      opens the paper. §4, §6, §7 and §10 are written by you, with the PDF open. That is the whole
+      method.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>The loop, per paper</h2></div>
+    <ol class="plain prose">
+      <li><strong>Triage, 5 min.</strong> Abstract, conclusion, figures, headings. Decide.</li>
+      <li><strong>Copy the template</strong> to <code>summaries/&lt;key&gt;.md</code>, fill the header block.</li>
+      <li><strong>Structural pass, 20 min</strong>, four markers live. Mark as you go, never after.</li>
+      <li><strong>Transcribe</strong> — each colour into its section. §4, §6, §7, §10.</li>
+      <li><strong>Assign limitation codes</strong>, reusing existing ones wherever they fit.</li>
+      <li><strong>Set status to</strong> <code>summarized</code> in <code>index.csv</code>, add the summary path.</li>
+      <li><strong>Run</strong> <code>python -m tools.lab lit check</code>, then <code>lit gates</code>.</li>
+    </ol>
+    <p class="prose">
+      Watch <code>lit gates</code> move. It is the only honest signal that the review is progressing,
+      and far more motivating than a page count — a cluster crossing G1 is a real event.
+    </p>
+  </section>
+
+  <footer>
+    <p>Built from <span class="mono">docs/literature-review-policy.md</span>,
+       <span class="mono">docs/gap-validation-protocol.md</span> and
+       <span class="mono">literature/summaries/TEMPLATE.md</span>.</p>
+    <p>Worked example: Chellapandi, Yuan, Żak &amp; Wang, <em>A Survey of Federated Learning for
+       Connected and Automated Vehicles</em>, arXiv:2303.10677v1, 2023.</p>
+    <p>Marker colours are functional: amber assumption · red limitation · blue systems · green quotable.</p>
+  </footer>
+
+</div>
+
+</body></html>

@@ -1,0 +1,256 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>RRSI First Pass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#16202A; --muted:#5A6672; --line:#D9DFE5;
+  --accent:#1F5F8B; --accent-ink:#FFFFFF; --mark:#F6E27A; --mark-ink:#2A2410;
+  --speak:#E3EEF7; --good:#2F7D4F;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11161B; --surface:#182028; --ink:#E3E8ED; --muted:#98A5B1; --line:#2A3540;
+    --accent:#7FB6DD; --accent-ink:#0E1A24; --mark:#5E5116; --mark-ink:#FBF1C4;
+    --speak:#1E3244; --good:#6CC08F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11161B; --surface:#182028; --ink:#E3E8ED; --muted:#98A5B1; --line:#2A3540;
+  --accent:#7FB6DD; --accent-ink:#0E1A24; --mark:#5E5116; --mark-ink:#FBF1C4;
+  --speak:#1E3244; --good:#6CC08F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:0 96px}
+.wrap{max-width:720px;margin:0 auto}
+header{padding-block:28px 12px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,5vw,34px);line-height:1.15;margin:.3em 0 .35em;text-wrap:balance}
+.lede{color:var(--muted);max-width:62ch;margin:0}
+.lede a{color:var(--accent)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,select{font:inherit;font-size:14px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 12px;cursor:pointer}
+button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600;min-width:112px}
+.bar .spacer{flex:1}
+.bar label{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.status{font-family:var(--mono);font-size:12px;color:var(--muted);width:100%}
+ol.stops{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:14px}
+.stop{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;scroll-margin-top:120px}
+.stop.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.stop-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.num{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stop h2{font-family:var(--serif);font-size:20px;font-weight:600;margin:0;text-wrap:balance}
+.read{margin:12px 0 4px;display:inline-block;background:var(--mark);color:var(--mark-ink);padding:4px 10px;border-radius:3px;font-size:14px}
+.read b{font-family:var(--mono);font-weight:500}
+.explain{font-family:var(--serif);font-size:17px;line-height:1.62;margin:10px 0 0;max-width:65ch}
+.explain span{border-radius:3px;transition:background .15s}
+.explain span.now{background:var(--speak)}
+.note{font-size:13px;color:var(--muted);margin-top:8px;border-left:2px solid var(--line);padding-left:10px}
+details{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--accent)}
+details p{margin:.5em 0 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.play-one{font-size:13px;padding:5px 10px}
+textarea{width:100%;min-height:190px;font:inherit;font-size:14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);padding:10px;margin-top:10px}
+.copied{font-size:13px;color:var(--good);align-self:center}
+.nospeech{background:var(--mark);color:var(--mark-ink);padding:10px 12px;border-radius:6px;margin-top:12px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Pass 1 of 3 · arXiv 2609.24972 · about 15 min</div>
+    <h1>RRSI: first-pass read-along</h1>
+    <p class="lede">Keep the PDF open next to this page. Each stop tells you what to read in the paper (yellow), then explains it in plain words, aloud if you press Play. The page never reads the paper to you. You read it; it explains. Page numbers are the numbers printed at the bottom of each PDF page.</p>
+  </header>
+
+  <div class="bar" role="toolbar" aria-label="Playback">
+    <button id="prev" type="button" aria-label="Previous stop">◀ Prev</button>
+    <button id="play" class="primary" type="button">▶ Play</button>
+    <button id="next" type="button" aria-label="Next stop">Next ▶</button>
+    <span class="spacer"></span>
+    <label for="rate">Speed
+      <select id="rate"><option value="0.8">0.8×</option><option value="0.9" selected>0.9×</option><option value="1">1.0×</option><option value="1.15">1.15×</option></select>
+    </label>
+    <label for="voice">Voice <select id="voice"><option value="">Default</option></select></label>
+    <div class="status" id="status" aria-live="polite">Stop 0 of 10 · press Play, or read on your own</div>
+  </div>
+  <div id="nospeech" class="nospeech" hidden>This browser has no speech voice available, so the audio will not play. Everything is still readable below.</div>
+
+  <ol class="stops" id="stops"></ol>
+</div>
+
+<script>
+const STOPS = [
+ { title:"Warm-up: the two questions you skipped",
+   read:null,
+   text:"First, the two warm-up questions. Question one. If the proposer writes the note, for task forty two, return seven, into the harness, that is benchmark-specific fitting. The edit raises the score on that one task, but it teaches the agent nothing it can use on a new task. The paper names this failure on page two. Question two. Why do we need out-of-distribution tasks? Because the evolve-set score was used to choose which edits to keep. A score you optimised against is biased upward, exactly like training accuracy. Only tasks that were never used for selection can tell you whether the harness really got better. Keep these two ideas in mind. They are the whole paper in miniature.",
+   q:"You tune a car's calibration on one test track until lap times are perfect. What is the evolve set in this analogy, and what is the out-of-distribution set?",
+   a:"The test track you tuned on is the evolve set. Any road you did not tune on is out-of-distribution. Perfect lap times on the tuning track prove little until you drive somewhere new." },
+
+ { title:"The title, read right to left",
+   read:"Page 1: read the title only.",
+   text:"Read titles from right to left. Agent Harnesses is the object: the thing being improved. Recursive Self-Improvement is the process: a loop where the system improves itself, then improves the improved version, round after round. Regularized is the authors' contribution: they add constraints to that loop. So before reading a single sentence you know the paper's shape. There is an existing process, and they claim it needs regularization.",
+   q:"Which single word in the title is the authors' own contribution?",
+   a:"Regularized. Harness self-improvement already existed. Adding regularization to it is what this paper claims." },
+
+ { title:"Abstract, part 1: what a harness is",
+   read:"Page 1, abstract: the first two sentences.",
+   text:"The first sentence defines a harness. It is everything around the frozen model: prompts, control flow, tools, memory, and context management. Frozen means the model's weights never change in this paper. Only the software around it changes. The second sentence says recent methods automate harness improvement. They repeatedly propose edits to parts of the harness and select the good ones. The authors call this recursive self-improvement at the agent-system level. Agent-system level is the key phrase. The improvement happens in the harness, not in the model weights.",
+   q:"In this paper, does the model learn? What exactly changes between rounds?",
+   a:"The model does not learn: its weights stay frozen. Only the harness changes between rounds: prompts, control flow, tools, memory, and context handling." },
+
+ { title:"Abstract, part 2: the problem",
+   read:"Page 1, abstract: the sentence starting with “However”.",
+   text:"This is the problem statement. When a paper says However, the problem usually follows. The claim is that recursive evolution may overfit by memorizing the training tasks. The symptom is a pattern of numbers. Gains look large on the tasks used during evolution, called in-distribution. They shrink or even vanish on out-of-distribution benchmarks. Notice the word may. At this point it is a hypothesis. A good reader asks: where do they show evidence for this? We will find it in Figure 1.",
+   q:"What pattern of numbers would convince you that a harness is overfitting?",
+   a:"A big gain on the evolve set combined with little or no gain, or even a loss, on tasks never used during evolution." },
+
+ { title:"Abstract, part 3: the solution",
+   read:"Page 1, abstract: from “We introduce” to “or even noises.”",
+   text:"Here is the solution, and it has two sides. The loop has a proposer, which suggests edits, and a selector, which decides which edits to keep. On the proposer side there are two ideas. First, a budget that limits how many edits one candidate may bundle together, and that budget shrinks over time. That is what temporally annealed means. Second, the proposer uses the history of past rounds to try directions nobody has explored yet. On the selector side there is a critic and a pruner. The critic rejects edits that are specific to the benchmark. The pruner removes changes that are too small, too expensive, or no longer useful. The goal, in their words, is to favour reusable mechanisms over benchmark-specific ones, or even noise. Do not worry about the details yet. That is the second pass.",
+   q:"Name the two sides of the loop, and one regularizer on each side.",
+   a:"Proposer side: the annealed edit budget, or history-based exploration. Selector side: the critic, or the pruner." },
+
+ { title:"Abstract, part 4: the numbers",
+   read:"Page 1, abstract: the last sentence, starting “Across eight benchmarks”.",
+   text:"Now the claimed results. There are eight benchmarks across three domains: coding, agentic workspace, and engineering design. RRSI gains up to fourteen point one points on the split it evolves against. It gains up to four point seven points on the five out-of-distribution benchmarks. And the final harness uses thirty percent fewer policy tokens than unregularized evolution. Here is a research habit. The words up to mean the best case. Every headline number should be traced to a table. The fourteen point one comes from the tables on pages nine and ten, where Terminal-Bench goes from sixty four point six to seventy eight point seven. The four point seven is on page seven, where the agentic benchmarks gain between three point five and four point seven. So the worst case among those is three point five. Always look for the worst case too.",
+   q:"Why should you distrust a result reported only as “up to X”?",
+   a:"“Up to” is the single best case. You need the range, or the worst case, to judge it. Here the out-of-distribution agentic gains range from 3.5 to 4.7 points (page 7)." },
+
+ { title:"Figure 1: the evidence in one picture",
+   read:"Page 2: look at Figure 1 and read its caption.",
+   text:"This is the most important figure. Start with panel a, on the left. The horizontal axis is the gain on the evolve split, and the vertical axis is the gain out of distribution, both as relative percentages. The dashed line is one to one transfer, where every evolve gain carries over. The pink zone at the bottom means the gain does not transfer. Look where the prior methods sit: Meta-Harness, Unregularized, HarnessX, AHE, and TTHE. They sit near zero or below it. AHE and TTHE end up worse than the starting harness, H zero. Now find RRSI, the blue star at the top left. It gains only about one percent on the evolve split, but about ten percent out of distribution. That is the whole thesis in one dot: gain less where you are scored, and more where it matters. Panels b to d show held-out scores for three domains. Each has three bars: H zero, the average of prior methods, and RRSI. Notice that prior is almost equal to H zero every time. Now two critical-reading habits. One: the bar charts do not start at zero, so small differences look large. The coding gain is eighty two to eighty three point eight, a gain of one point eight points. Two: there are no error bars. Write down a question for the second pass: are these differences bigger than the noise?",
+   q:"In panel (a), why is it significant that RRSI's evolve-set gain is small?",
+   a:"It shows that RRSI is not chasing the evolve score. It accepts fewer apparent gains, and the gains it keeps transfer. The prior methods show the opposite pattern." },
+
+ { title:"Introduction: three ways overfitting happens",
+   read:"Page 2: the paragraph starting “Our study shows that overfitting can arise”.",
+   text:"This paragraph names three causes of overfitting, and they are worth memorising. One: benchmark-specific fitting, where the search encodes patterns specific to the benchmark. Two: noise chasing, where the search keeps candidates that only looked better because of evaluation noise. Three: complexity accumulation, where the harness keeps growing in ways that raise the evolve score without improving the agent. Now a thinking exercise. Try to match each cause to a regularizer from the abstract. The critic seems aimed at cause one. Something that compares scores against noise should address cause two. The budget and the pruner seem aimed at cause three. This matching is my reading, not the paper's statement yet. You will check it in section three during the second pass. Making a prediction and then checking it is how researchers read.",
+   q:"Which of the three causes explains why the unregularized harness uses more tokens?",
+   a:"Complexity accumulation. The harness keeps adding machinery, and each extra step costs tokens, whether or not it helps." },
+
+ { title:"Contributions",
+   read:"Page 3, top: the paragraph starting “Our contributions are threefold”.",
+   text:"Every paper lists its contributions near the end of the introduction. This list is what the authors want to be remembered for. There are three here. One: they identify overfitting as a key challenge in harness-based self-improvement. Two: they propose RRSI, which regularizes both proposal and selection while keeping every harness component editable. Three: they show improvements in both transfer and efficiency across eight benchmarks in three domains. The phrase keeping each harness component editable matters. Other methods might restrict what can change. These authors leave everything changeable and instead constrain how feedback is used. That is their positioning against related work.",
+   q:"Does RRSI restrict which parts of the harness may be edited?",
+   a:"No. Every component stays editable. RRSI constrains how the search uses feedback: how edits are proposed, and which ones are accepted." },
+
+ { title:"Conclusion and Limitations",
+   read:"Page 11: read “6. Conclusion” and the “Limitations” paragraph below it.",
+   text:"The conclusion restates the core idea. A finite evolve set is reused again and again across rounds, so apparent self-improvement can be fitting, noise, or unnecessary complexity rather than real progress. Now the Limitations paragraph, which researchers read very carefully, because it is a list of future papers. The authors admit three things. First, they only study frozen models, not weights that change during evolution. Second, RRSI still depends on a finite evolve set and several hyperparameters. Third, broader validation is needed across other architectures, tool ecosystems, and longer runs. Our small-scale replication, with small open models on one GPU, speaks directly to the second and third points. That is why it can count as a contribution, not only an exercise.",
+   q:"Pick one limitation and turn it into a research question you could study.",
+   a:"One example: “Does RRSI still help when the policy and proposer are small open models on one GPU?” This addresses the call for broader validation and for hyperparameter sensitivity." },
+
+ { title:"Your first-pass verdict",
+   read:"Close the PDF. Write from memory.",
+   text:"Last step. Close the PDF and answer from memory. This check comes from Keshav's well-known three-pass method for reading papers. It asks five questions, the five C's. Category: what kind of paper is this? Context: what earlier work does it build on? Correctness: do the assumptions look valid? Contributions: what is new? Clarity: is it well written? Type short answers in the box below, press Copy, and paste them into our chat. Rough English is fine. I will check your answers against the paper and then take you to pass two.",
+   q:null, a:null, final:true }
+];
+
+const $ = s => document.querySelector(s);
+const list = $("#stops");
+const synth = window.speechSynthesis;
+let cur = 0, playing = false, paused = false, sentIdx = 0, token = 0;
+
+function sentences(t){ return t.match(/[^.!?]+[.!?]+(\s|$)|[^.!?]+$/g).map(s=>s.trim()).filter(Boolean); }
+
+STOPS.forEach((s,i)=>{
+  const li = document.createElement("li");
+  li.className = "stop"; li.id = "stop-"+i;
+  const sents = sentences(s.text).map((x,j)=>`<span data-s="${j}">${x}</span>`).join(" ");
+  li.innerHTML = `
+    <div class="stop-head"><span class="num">Stop ${i} / ${STOPS.length-1}</span><h2>${s.title}</h2></div>
+    ${s.read ? `<div class="read">Read now: <b>${s.read}</b></div>` : ""}
+    <p class="explain">${sents}</p>
+    <div class="row"><button type="button" class="play-one" data-i="${i}">▶ Play this stop</button></div>
+    ${s.q ? `<details><summary>Check yourself: ${s.q}</summary><p>${s.a}</p></details>` : ""}
+    ${s.final ? `
+      <textarea id="verdict" aria-label="Your five C's">Category:
+Context:
+Correctness:
+Contributions:
+Clarity:
+Questions I still have: </textarea>
+      <div class="row"><button type="button" id="copy">Copy my answers</button><span class="copied" id="copied" aria-live="polite"></span></div>` : ""}`;
+  list.appendChild(li);
+});
+
+function setStatus(){ $("#status").textContent = `Stop ${cur} of ${STOPS.length-1} · ${STOPS[cur].title}` + (playing ? (paused?" · paused":" · speaking") : ""); }
+function mark(i){
+  document.querySelectorAll(".stop").forEach(e=>e.classList.toggle("active", +e.id.slice(5)===i));
+  document.querySelectorAll(".explain span.now").forEach(e=>e.classList.remove("now"));
+  try{ localStorage.setItem("rrsi-pass1-stop", String(i)); }catch(e){}
+}
+function go(i, scroll=true){
+  cur = Math.max(0, Math.min(STOPS.length-1, i)); sentIdx = 0; mark(cur); setStatus();
+  if(scroll) document.getElementById("stop-"+cur).scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function voices(){
+  if(!synth) return;
+  const sel = $("#voice"), keep = sel.value;
+  const vs = synth.getVoices().filter(v=>/^en/i.test(v.lang));
+  sel.innerHTML = '<option value="">Default</option>' + vs.map(v=>`<option value="${v.name}">${v.name} (${v.lang})</option>`).join("");
+  sel.value = keep;
+}
+
+function speakFrom(i, j){
+  if(!synth){ $("#nospeech").hidden = false; return; }
+  const my = ++token;
+  const spans = document.querySelectorAll(`#stop-${i} .explain span`);
+  if(j >= spans.length){
+    if(i < STOPS.length-1 && playing){ go(i+1); speakFrom(cur, 0); }
+    else { stop(); }
+    return;
+  }
+  sentIdx = j;
+  spans.forEach(s=>s.classList.toggle("now", +s.dataset.s===j));
+  const u = new SpeechSynthesisUtterance(spans[j].textContent);
+  u.rate = parseFloat($("#rate").value);
+  const vn = $("#voice").value; if(vn){ const v = synth.getVoices().find(x=>x.name===vn); if(v) u.voice = v; }
+  u.onend = ()=>{ if(my===token && playing && !paused) speakFrom(i, j+1); };
+  u.onerror = ()=>{ if(my===token && playing && !paused) speakFrom(i, j+1); };
+  synth.speak(u);
+}
+
+function start(i){
+  if(!synth){ $("#nospeech").hidden = false; return; }
+  synth.cancel(); playing = true; paused = false; go(i); speakFrom(cur, 0);
+  $("#play").textContent = "❚❚ Pause"; setStatus();
+}
+function stop(){
+  token++; if(synth) synth.cancel(); playing = false; paused = false;
+  $("#play").textContent = "▶ Play";
+  document.querySelectorAll(".explain span.now").forEach(e=>e.classList.remove("now")); setStatus();
+}
+$("#play").addEventListener("click", ()=>{
+  if(!playing){ start(cur); return; }
+  if(!paused){ paused = true; token++; synth.cancel(); $("#play").textContent = "▶ Resume"; setStatus(); }
+  else { paused = false; $("#play").textContent = "❚❚ Pause"; speakFrom(cur, sentIdx); setStatus(); }
+});
+$("#next").addEventListener("click", ()=>{ const was = playing && !paused; if(was){ token++; synth.cancel(); go(cur+1); speakFrom(cur,0);} else { stop(); go(cur+1);} });
+$("#prev").addEventListener("click", ()=>{ const was = playing && !paused; if(was){ token++; synth.cancel(); go(cur-1); speakFrom(cur,0);} else { stop(); go(cur-1);} });
+list.addEventListener("click", e=>{ const b = e.target.closest(".play-one"); if(b) start(+b.dataset.i); });
+
+const ta = $("#verdict");
+try{ const d = localStorage.getItem("rrsi-pass1-verdict"); if(d) ta.value = d; }catch(e){}
+ta.addEventListener("input", ()=>{ try{ localStorage.setItem("rrsi-pass1-verdict", ta.value); }catch(e){} });
+$("#copy").addEventListener("click", ()=>{
+  const done = ()=>{ $("#copied").textContent = "Copied. Paste it into the chat."; };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(ta.value).then(done, ()=>{ ta.select(); $("#copied").textContent = "Text selected. Press Ctrl+C to copy."; });
+  } else { ta.select(); $("#copied").textContent = "Text selected. Press Ctrl+C to copy."; }
+});
+
+if(synth){ voices(); synth.onvoiceschanged = voices; } else { $("#nospeech").hidden = false; }
+let saved = 0; try{ saved = parseInt(localStorage.getItem("rrsi-pass1-stop")||"0",10)||0; }catch(e){}
+go(saved, false);
+</script>
+
+</body></html>
