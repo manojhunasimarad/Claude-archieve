@@ -1,0 +1,293 @@
+llm: 42 files, 5.7M
+kitchen: 12 files, 1012K
+dojo: 1 files, 152K
+dojolessons: 1 files, 184K
+Downloading https://services.gradle.org/distributions/gradle-8.14.3-bin.zip
+.............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%..............100%
+
+Welcome to Gradle 8.14.3!
+
+Here are the highlights of this release:
+ - Java 24 support
+ - GraalVM Native Image toolchain selection
+ - Enhancements to test reporting
+ - Build Authoring improvements
+
+For more details see https://docs.gradle.org/8.14.3/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDojoReleaseBuild UP-TO-DATE
+> Task :app:mergeDojoReleaseJniLibFolders
+> Task :app:mergeDojoReleaseNativeLibs NO-SOURCE
+> Task :app:stripDojoReleaseDebugSymbols NO-SOURCE
+> Task :app:extractDojoReleaseNativeSymbolTables NO-SOURCE
+> Task :app:mergeDojoReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:checkDojoReleaseDuplicateClasses
+> Task :app:generateDojoReleaseBuildConfig
+> Task :app:javaPreCompileDojoRelease
+> Task :app:checkDojoReleaseAarMetadata
+> Task :app:generateDojoReleaseResValues
+> Task :app:mapDojoReleaseSourceSetPaths
+> Task :app:generateDojoReleaseResources
+> Task :app:packageDojoReleaseResources
+> Task :app:mergeDojoReleaseResources
+> Task :app:createDojoReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksDojoRelease
+> Task :app:parseDojoReleaseLocalResources
+> Task :app:processDojoReleaseMainManifest
+> Task :app:processDojoReleaseManifest
+> Task :app:mergeDojoReleaseStartupProfile
+> Task :app:desugarDojoReleaseFileDependencies
+> Task :app:processDojoReleaseManifestForPackage
+> Task :app:mergeDojoReleaseArtProfile
+> Task :app:mergeDojoReleaseShaders
+> Task :app:compileDojoReleaseShaders NO-SOURCE
+> Task :app:generateDojoReleaseAssets UP-TO-DATE
+> Task :app:mergeDojoReleaseAssets
+> Task :app:mergeExtDexDojoRelease
+> Task :app:compressDojoReleaseAssets
+> Task :app:extractDojoReleaseVersionControlInfo
+> Task :app:processDojoReleaseJavaRes NO-SOURCE
+> Task :app:processDojoReleaseResources
+> Task :app:collectDojoReleaseDependencies
+> Task :app:mergeDojoReleaseJavaResource
+
+> Task :app:compileDojoReleaseJavaWithJavac
+Note: /home/runner/work/Claude-archieve/Claude-archieve/android/app/src/main/java/io/github/manojhunasimarad/webshell/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dexBuilderDojoRelease
+> Task :app:mergeDojoReleaseGlobalSynthetics
+> Task :app:sdkDojoReleaseDependencyData
+> Task :app:validateSigningDojoRelease
+> Task :app:writeDojoReleaseAppMetadata
+> Task :app:optimizeDojoReleaseResources
+> Task :app:writeDojoReleaseSigningConfigVersions
+> Task :app:preDojolessonsReleaseBuild UP-TO-DATE
+> Task :app:mergeDojolessonsReleaseJniLibFolders
+> Task :app:mergeDojolessonsReleaseNativeLibs NO-SOURCE
+> Task :app:stripDojolessonsReleaseDebugSymbols NO-SOURCE
+> Task :app:extractDojolessonsReleaseNativeSymbolTables NO-SOURCE
+> Task :app:mergeDojolessonsReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:checkDojolessonsReleaseDuplicateClasses
+> Task :app:generateDojolessonsReleaseBuildConfig
+> Task :app:javaPreCompileDojolessonsRelease
+> Task :app:checkDojolessonsReleaseAarMetadata
+> Task :app:generateDojolessonsReleaseResValues
+> Task :app:mapDojolessonsReleaseSourceSetPaths
+> Task :app:mergeDexDojoRelease
+> Task :app:generateDojolessonsReleaseResources
+> Task :app:compileDojoReleaseArtProfile
+> Task :app:packageDojolessonsReleaseResources
+> Task :app:createDojolessonsReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksDojolessonsRelease
+> Task :app:mergeDojolessonsReleaseResources
+> Task :app:parseDojolessonsReleaseLocalResources
+> Task :app:processDojolessonsReleaseMainManifest
+> Task :app:processDojolessonsReleaseManifest
+> Task :app:mergeDojolessonsReleaseStartupProfile
+> Task :app:processDojolessonsReleaseManifestForPackage
+> Task :app:desugarDojolessonsReleaseFileDependencies
+> Task :app:mergeExtDexDojolessonsRelease
+> Task :app:mergeDojolessonsReleaseArtProfile
+> Task :app:mergeDojolessonsReleaseShaders
+> Task :app:compileDojolessonsReleaseShaders NO-SOURCE
+> Task :app:generateDojolessonsReleaseAssets UP-TO-DATE
+> Task :app:mergeDojolessonsReleaseAssets
+> Task :app:extractDojolessonsReleaseVersionControlInfo
+> Task :app:processDojolessonsReleaseJavaRes NO-SOURCE
+> Task :app:compressDojolessonsReleaseAssets
+> Task :app:mergeDojolessonsReleaseJavaResource
+> Task :app:collectDojolessonsReleaseDependencies
+> Task :app:processDojolessonsReleaseResources
+> Task :app:sdkDojolessonsReleaseDependencyData
+
+> Task :app:compileDojolessonsReleaseJavaWithJavac
+Note: /home/runner/work/Claude-archieve/Claude-archieve/android/app/src/main/java/io/github/manojhunasimarad/webshell/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dexBuilderDojolessonsRelease
+> Task :app:mergeDojolessonsReleaseGlobalSynthetics
+> Task :app:packageDojoRelease
+> Task :app:createDojoReleaseApkListingFileRedirect
+> Task :app:assembleDojoRelease
+> Task :app:validateSigningDojolessonsRelease
+> Task :app:writeDojolessonsReleaseAppMetadata
+> Task :app:writeDojolessonsReleaseSigningConfigVersions
+> Task :app:preKitchenReleaseBuild UP-TO-DATE
+> Task :app:mergeKitchenReleaseJniLibFolders
+> Task :app:optimizeDojolessonsReleaseResources
+> Task :app:mergeKitchenReleaseNativeLibs NO-SOURCE
+> Task :app:mergeDexDojolessonsRelease
+> Task :app:compileDojolessonsReleaseArtProfile
+> Task :app:stripKitchenReleaseDebugSymbols NO-SOURCE
+> Task :app:extractKitchenReleaseNativeSymbolTables NO-SOURCE
+> Task :app:mergeKitchenReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:checkKitchenReleaseDuplicateClasses
+> Task :app:generateKitchenReleaseBuildConfig
+> Task :app:javaPreCompileKitchenRelease
+> Task :app:checkKitchenReleaseAarMetadata
+> Task :app:generateKitchenReleaseResValues
+> Task :app:mapKitchenReleaseSourceSetPaths
+> Task :app:generateKitchenReleaseResources
+> Task :app:packageKitchenReleaseResources
+> Task :app:packageDojolessonsRelease
+> Task :app:createDojolessonsReleaseApkListingFileRedirect
+> Task :app:assembleDojolessonsRelease
+> Task :app:createKitchenReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksKitchenRelease
+> Task :app:parseKitchenReleaseLocalResources
+> Task :app:mergeKitchenReleaseResources
+> Task :app:processKitchenReleaseMainManifest
+> Task :app:processKitchenReleaseManifest
+> Task :app:desugarKitchenReleaseFileDependencies
+> Task :app:processKitchenReleaseManifestForPackage
+> Task :app:mergeKitchenReleaseStartupProfile
+> Task :app:mergeExtDexKitchenRelease
+> Task :app:mergeKitchenReleaseArtProfile
+> Task :app:mergeKitchenReleaseShaders
+> Task :app:compileKitchenReleaseShaders NO-SOURCE
+> Task :app:generateKitchenReleaseAssets UP-TO-DATE
+> Task :app:mergeKitchenReleaseAssets
+> Task :app:extractKitchenReleaseVersionControlInfo
+> Task :app:processKitchenReleaseJavaRes NO-SOURCE
+> Task :app:mergeKitchenReleaseJavaResource
+> Task :app:collectKitchenReleaseDependencies
+> Task :app:compressKitchenReleaseAssets
+> Task :app:sdkKitchenReleaseDependencyData
+> Task :app:validateSigningKitchenRelease
+> Task :app:writeKitchenReleaseAppMetadata
+> Task :app:writeKitchenReleaseSigningConfigVersions
+> Task :app:preLlmReleaseBuild UP-TO-DATE
+> Task :app:mergeLlmReleaseJniLibFolders
+> Task :app:mergeLlmReleaseNativeLibs NO-SOURCE
+> Task :app:stripLlmReleaseDebugSymbols NO-SOURCE
+> Task :app:processKitchenReleaseResources
+> Task :app:extractLlmReleaseNativeSymbolTables NO-SOURCE
+
+> Task :app:compileKitchenReleaseJavaWithJavac
+Note: /home/runner/work/Claude-archieve/Claude-archieve/android/app/src/main/java/io/github/manojhunasimarad/webshell/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dexBuilderKitchenRelease
+> Task :app:mergeKitchenReleaseGlobalSynthetics
+> Task :app:mergeLlmReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:checkLlmReleaseDuplicateClasses
+> Task :app:generateLlmReleaseBuildConfig
+> Task :app:javaPreCompileLlmRelease
+> Task :app:checkLlmReleaseAarMetadata
+> Task :app:generateLlmReleaseResValues
+> Task :app:mapLlmReleaseSourceSetPaths
+> Task :app:generateLlmReleaseResources
+> Task :app:mergeDexKitchenRelease
+> Task :app:compileKitchenReleaseArtProfile
+> Task :app:packageLlmReleaseResources
+> Task :app:optimizeKitchenReleaseResources
+> Task :app:parseLlmReleaseLocalResources
+> Task :app:mergeLlmReleaseResources
+> Task :app:createLlmReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksLlmRelease
+> Task :app:processLlmReleaseMainManifest
+> Task :app:processLlmReleaseManifest
+> Task :app:desugarLlmReleaseFileDependencies
+> Task :app:mergeLlmReleaseStartupProfile
+> Task :app:processLlmReleaseManifestForPackage
+> Task :app:mergeExtDexLlmRelease
+> Task :app:packageKitchenRelease
+> Task :app:createKitchenReleaseApkListingFileRedirect
+> Task :app:assembleKitchenRelease
+> Task :app:mergeLlmReleaseArtProfile
+> Task :app:mergeLlmReleaseShaders
+> Task :app:compileLlmReleaseShaders NO-SOURCE
+> Task :app:generateLlmReleaseAssets UP-TO-DATE
+> Task :app:mergeLlmReleaseAssets
+> Task :app:extractLlmReleaseVersionControlInfo
+> Task :app:processLlmReleaseJavaRes NO-SOURCE
+> Task :app:processLlmReleaseResources
+> Task :app:collectLlmReleaseDependencies
+> Task :app:mergeLlmReleaseJavaResource
+> Task :app:compressLlmReleaseAssets
+
+> Task :app:compileLlmReleaseJavaWithJavac
+Note: /home/runner/work/Claude-archieve/Claude-archieve/android/app/src/main/java/io/github/manojhunasimarad/webshell/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:dexBuilderLlmRelease
+> Task :app:mergeLlmReleaseGlobalSynthetics
+> Task :app:sdkLlmReleaseDependencyData
+> Task :app:validateSigningLlmRelease
+> Task :app:writeLlmReleaseAppMetadata
+> Task :app:writeLlmReleaseSigningConfigVersions
+> Task :app:mergeDexLlmRelease
+> Task :app:optimizeLlmReleaseResources
+> Task :app:compileLlmReleaseArtProfile
+> Task :app:processApplicationManifestDojoReleaseForBundle
+> Task :app:configureDojoReleaseDependencies
+> Task :app:parseDojoReleaseIntegrityConfig
+> Task :app:processApplicationManifestDojolessonsReleaseForBundle
+> Task :app:packageLlmRelease
+> Task :app:createLlmReleaseApkListingFileRedirect
+> Task :app:assembleLlmRelease
+> Task :app:assembleRelease
+> Task :app:configureDojolessonsReleaseDependencies
+> Task :app:parseDojolessonsReleaseIntegrityConfig
+> Task :app:processApplicationManifestKitchenReleaseForBundle
+> Task :app:configureKitchenReleaseDependencies
+> Task :app:parseKitchenReleaseIntegrityConfig
+> Task :app:processApplicationManifestLlmReleaseForBundle
+> Task :app:configureLlmReleaseDependencies
+> Task :app:parseLlmReleaseIntegrityConfig
+> Task :app:bundleDojoReleaseResources
+> Task :app:buildDojoReleasePreBundle
+> Task :app:bundleDojolessonsReleaseResources
+> Task :app:buildDojolessonsReleasePreBundle
+> Task :app:bundleKitchenReleaseResources
+> Task :app:buildKitchenReleasePreBundle
+> Task :app:bundleLlmReleaseResources
+> Task :app:buildLlmReleasePreBundle
+> Task :app:packageDojolessonsReleaseBundle
+> Task :app:packageDojoReleaseBundle
+> Task :app:packageKitchenReleaseBundle
+> Task :app:packageLlmReleaseBundle
+> Task :app:signDojolessonsReleaseBundle
+> Task :app:signDojoReleaseBundle
+> Task :app:produceDojolessonsReleaseBundleIdeListingFile
+> Task :app:produceDojoReleaseBundleIdeListingFile
+> Task :app:createDojoReleaseBundleListingFileRedirect
+> Task :app:bundleDojoRelease
+> Task :app:createDojolessonsReleaseBundleListingFileRedirect
+> Task :app:bundleDojolessonsRelease
+> Task :app:signKitchenReleaseBundle
+> Task :app:produceKitchenReleaseBundleIdeListingFile
+> Task :app:createKitchenReleaseBundleListingFileRedirect
+> Task :app:bundleKitchenRelease
+> Task :app:signLlmReleaseBundle
+> Task :app:produceLlmReleaseBundleIdeListingFile
+> Task :app:createLlmReleaseBundleListingFileRedirect
+> Task :app:bundleLlmRelease
+> Task :app:bundleRelease
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1793475523113.json
+
+[Incubating] Problems report is available at: file:///home/runner/work/Claude-archieve/Claude-archieve/android/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 53s
+192 actionable tasks: 192 executed
+total 5388
+drwxr-xr-x  2 runner runner    4096 Oct 31 19:39 .
+drwxr-xr-x 13 runner runner    4096 Oct 31 19:39 ..
+-rw-r--r--  1 runner runner   92907 Oct 31 19:39 dalal-dojo.aab
+-rw-r--r--  1 runner runner   93374 Oct 31 19:39 dalal-dojo.apk
+-rw-r--r--  1 runner runner  108726 Oct 31 19:39 dojo-lessons.aab
+-rw-r--r--  1 runner runner  109942 Oct 31 19:39 dojo-lessons.apk
+-rw-r--r--  1 runner runner  364992 Oct 31 19:39 kitchen.aab
+-rw-r--r--  1 runner runner  367834 Oct 31 19:39 kitchen.apk
+-rw-r--r--  1 runner runner 1945484 Oct 31 19:39 llm-from-zero.aab
+-rw-r--r--  1 runner runner 2413118 Oct 31 19:39 llm-from-zero.apk
