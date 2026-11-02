@@ -1,36 +1,33 @@
-# Radar · Sun 01 Nov 2026
+# Radar · Mon 02 Nov 2026
 
-_16 new items, about 8 minutes. Nothing here has been shown before._
+_13 new items, about 6 minutes. Nothing here has been shown before._
 
-**Deadlines:** [COMSNETS 2027 Graduate Forum submission](https://www.comsnets.org/PhD_forum.html) **in 8 days** (09 Nov) · [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) in 14 days (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 65 days (05 Jan)
+**Deadlines:** [COMSNETS 2027 Graduate Forum submission](https://www.comsnets.org/PhD_forum.html) **in 7 days** (09 Nov) · [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) in 13 days (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 64 days (05 Jan)
 
 ## New papers on your topics
 
-1. **[GAAC: Lossless KV Compression for Bandwidth-Efficient LLM Inference on Personal Devices](https://arxiv.org/abs/2610.38210)**: Weight-only, lossy quantization substantially reduces the storage and memory requirements for serving large language models (LLMs), but the growing key-value (KV) cache remains a bottleneck for long-c _(Edge AI, pruning, quantization)_
-2. **[AKDQ: Adaptive Key-Delta Quantization for Low-Bitrate RVQ-based Neural Speech Codecs](https://arxiv.org/abs/2610.39885)**: Low-bitrate speech coding is essential for bandwidth-constrained channels and on-device applications, but conventional residual vector quantization (RVQ)-based codecs employ a fixed number of codebook _(Edge AI, pruning, quantization)_
-3. **[GPU-Resident Speculative Decoding for In-Browser LLM Inference with WebGPU](https://arxiv.org/abs/2610.39761)**: WebGPU enables private, offline LLM inference inside web pages, but browser dispatch, inter-process communication, synchronous readback and single-token kernels slow decoding and make conventional spe _(Edge AI, pruning, quantization)_
-4. **[FPGAFly: A 166.7k-Neuron Fruit-Fly Connectome on One FPGA via Deferred Spike Expansion and Shared-Codeword States](https://arxiv.org/abs/2610.38118)**: Synapse-resolution fruit-fly (Drosophila) connectomes enable neuron-by-neuron simulation of entire insect nervous systems, yet whole-brain models still require computationally demanding software or mu _(Edge AI, pruning, quantization)_
+1. **[Latent-Lens: Visual Perception in Small Language Models Through Latent Communication](https://arxiv.org/abs/2610.41751)**: Bridging independent vision-language models (VLMs) and small language models (SLMs) in a modular multi-agent system typically forces them to exchange information as discrete text, which creates a loss _(Small and efficient language models)_
+2. **[Characterizing Recoverable Expert-Utilization Signatures in Fine-Tuned Mixture-of-Experts LLMs](https://arxiv.org/abs/2610.41039)**: As Mixture-of-Experts (MoE) large language models are increasingly deployed in distributed environments, from federated learning to edge-cloud systems, their architecture harbors an underexplored land _(Federated learning: vehicles, edge, communication)_
 
 ## Trending in AI research today
 
-- **[Memory Tax: Dissecting the Net Value of Agent Memory](https://huggingface.co/papers/2610.34073)** · 92 upvotes: Memory is increasingly used in long-horizon agents, yet the net value of building memory over direct retrieval from raw history remains largely unclear. _(matches: rag, agent)_
-- **[HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory](https://huggingface.co/papers/2610.24520)** · 90 upvotes: In long-term interactions with large language model (LLM) agents, users reveal habits through their choices and actions. _(matches: llm, language model, agent)_
-- **[Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities](https://huggingface.co/papers/2610.39301)** · 72 upvotes: We present Youtu-Parsing-Omni, an omni-modal parser that converts documents, images, audio, and video into structured records grounded in space and time, providing a perception layer for agents that r _(matches: distillation, language model, agent)_
-- **[TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving](https://huggingface.co/papers/2610.37230)** · 72 upvotes: Agentic services alternate between model inference on clustered GPUs and external tools on distributed CPUs. _(matches: llm, agent)_
-- **[A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement](https://huggingface.co/papers/2610.38568)** · 71 upvotes: Recursive self-improvement requires models not only to acquire useful training experience, but also to decide when their current experience has ceased to be useful.
+- **[Proving and Improving the Platonic Representation Hypothesis with JEPAs](https://huggingface.co/papers/2610.39302)** · 66 upvotes: Whether models trained on different modalities converge to the same representation of the world is central to AI. _(matches: language model)_
+- **[WorkFactory: Turning Professional Intents into Executable Work for Scalable Agent Training](https://huggingface.co/papers/2610.37161)** · 56 upvotes: Scaling supervised training for working agents requires diverse professional tasks that yield reliable expert demonstrations. _(matches: agent)_
+- **[Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success](https://huggingface.co/papers/2610.31670)** · 56 upvotes: Robot foundation models are typically evaluated through costly closed-loop rollouts, motivating low-cost offline proxies for model capability. _(matches: robot, language model)_
+- **[The Trinity:Capability-Driven Recursive Self-Improvement for Multimodal Agents](https://huggingface.co/papers/2610.36077)** · 45 upvotes: Multimodal intelligence can be viewed as human-guided co-evolution between worlds and agents through interaction. _(matches: agent)_
+- **[L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory](https://huggingface.co/papers/2610.40614)** · 44 upvotes: Interactive world models generate visual content conditioned on user actions, yet maintaining spatial consistency over long-horizon exploration in real time remains challenging. _(matches: transformer)_
 
 ## Rising repos (created in the last 14 days)
 
-- **[justxor/robotics-roadmap-2026](https://github.com/justxor/robotics-roadmap-2026)** · 29 stars: Открытый курс: собери первого робота и войди в робототехнику с нуля за 6 месяцев. Электроника → Arduino/ESP32 → CAD и 3D-печать → рука SO-101 → ROS 2 (SLAM, Nav
-- **[andrisgauracs/whistle-esp32](https://github.com/andrisgauracs/whistle-esp32)** · 200 stars · C: Whistle speech-to-text running fully on an ESP32-S3: hold a button, say a colour in one of 7 languages, the LED does it. No network.
-- **[mozihe/z-localization](https://github.com/mozihe/z-localization)** · 113 stars · C++: 2026年 东北大学T-DT实验室 RoboMaster超级对抗赛 哨兵定位开源
-- **[BoumedineBillal/esp32-pie-asr](https://github.com/BoumedineBillal/esp32-pie-asr)** · 42 stars · C++: Live English speech recognition on the ESP32-P4: a 65.7M-parameter streaming transducer in 2/4-bit weights, faster than real time, on the chip alone. With six v
-- **[ASIG-X/RESPLE2](https://github.com/ASIG-X/RESPLE2)** · 35 stars · C++: First recursive non-uniform B-spline state estimation framework, supporting a wide range of multi-sensor odometry systems with optional loop closure correction.
+- **[wanghao-SunSky/cs329z-chinese](https://github.com/wanghao-SunSky/cs329z-chinese)** · 414 stars · HTML: 斯坦福 Stanford CS329Z Engineering AI Agents 中文教程：面向 Python 开发者的 AI 智能体课程，19 讲与 4 项实践，涵盖 LLM、RAG、工具调用、记忆、多智能体、评测与安全。完整 Markdown、在线与离线 HTML。Chinese course notes.
+- **[modelflare-ai/AnyModelBot](https://github.com/modelflare-ai/AnyModelBot)** · 877 stars · TypeScript: 🤖 Open-source, local-first alternative to Grok Bot, OpenAI dots and Claude Duet. Your own AI bots on any model: GPT, Claude, Gemini, Grok, DeepSeek, Kimi, GLM a
+- **[N1nEmAn/sapper-v2](https://github.com/N1nEmAn/sapper-v2)** · 545 stars · Python: Autonomous pentest legion — AI commander + worker swarm + layered fact-intent graph. 3rd Tencent Intelligent Attack-Defense online champion (634 teams · 8h unat
 
 ## Worth reading on Hacker News
 
-- **[Show HN: A language model that lives in a boot sector](https://github.com/kerlenton/bootgpt)** · 80 points, [3 comments](https://news.ycombinator.com/item?id=50315782)
-- **[HackerTube: YouTube built from videos recommended by HN](https://karpathy.bearblog.dev/hacker-tube/)** · 1126 points, [332 comments](https://news.ycombinator.com/item?id=50319510)
+- **[AI agent swarms in Minecraft fail to build civilization, drown in bureaucracy](https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-swarms-unleashed-in-minecraft-to-build-a-thriving-civilization-50-agent-teams-fail-after-falling-into-paralyzing-bureaucracy)** · 166 points, [78 comments](https://news.ycombinator.com/item?id=50325662)
+- **[Show HN: HackerBooks – HackerTube, but for books mentioned on HN](https://hackerbooks.org)** · 1272 points, [223 comments](https://news.ycombinator.com/item?id=50326821)
+- **[Restrooms along the Norwegian Scenic Routes](https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/)** · 685 points, [404 comments](https://news.ycombinator.com/item?id=50324388)
 
 ---
 Sources: arXiv ok · Hugging Face ok · Hacker News ok · GitHub ok. Edit topics in `radar/config.json`.
