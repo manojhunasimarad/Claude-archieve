@@ -1,26 +1,22 @@
-# Radar · Sat 07 Nov 2026
+# Radar · Sun 08 Nov 2026
 
-_9 new items, about 4 minutes. Nothing here has been shown before._
+_8 new items, about 4 minutes. Nothing here has been shown before._
 
-**Deadlines:** [COMSNETS 2027 Graduate Forum submission](https://www.comsnets.org/PhD_forum.html) **in 2 days** (09 Nov) · [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 8 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 59 days (05 Jan)
+**Deadlines:** [COMSNETS 2027 Graduate Forum submission](https://www.comsnets.org/PhD_forum.html) **tomorrow** (09 Nov) · [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 7 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 58 days (05 Jan)
 
 ## Trending in AI research today
 
-- **[SLA: Scaling Spatial-Language-Action Model via Continual Pre-training](https://huggingface.co/papers/2611.08373)** · 137 upvotes: Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. _(matches: robot)_
-- **[Decoupled Predictive Decision Making: A Shared Conditional Predictor for Agents](https://huggingface.co/papers/2611.02075)** · 114 upvotes: Agent decisions depend on empirical relationships that deployment observations reveal and task descriptions alone may leave unresolved. _(matches: language model, agent)_
-- **[FrontierPhysics: Evaluating Agents for End-to-End Physics Research](https://huggingface.co/papers/2611.06910)** · 56 upvotes: AI agents are playing an increasingly important role in physics research. _(matches: agent)_
-- **[Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training](https://huggingface.co/papers/2611.04277)** · 55 upvotes: Harness evolution from a common base exhibits Locality, Complementarity, and Nonstationarity: variants repair different failures, and their utility changes as the policy learns. _(matches: agent)_
-- **[Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand](https://huggingface.co/papers/2611.00883)** · 50 upvotes: Benchmark compression reduces the often prohibitive time and cost of model evaluation by evaluating models on a small benchmark subset that closely matches full-benchmark results. _(matches: agent)_
-
-## Rising repos (created in the last 14 days)
-
-- **[ifrc-zju/blockchain-federated-prototypes](https://github.com/ifrc-zju/blockchain-federated-prototypes)** · 29 stars · Python: 区块链协作的联邦原型学习，结合语义加权对比学习与原型收缩，通过智能合约校验训练轮次、客户端提交和聚合状态。
-- **[Sandflow-ai/sand3d](https://github.com/Sandflow-ai/sand3d)** · 864 stars · HTML: 3D modeling in Python, built for LLMs.
+- **[From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence](https://huggingface.co/papers/2611.05376)** · 86 upvotes: For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. _(matches: embedded, robot, agent)_
+- **[Factorized MLLM Embeddings for Composed Image Retrieval](https://huggingface.co/papers/2611.05193)** · 48 upvotes: Composed Image Retrieval (CIR) aims to retrieve a target image given a reference image and a modification text. _(matches: language model)_
+- **[WeLM-Image: A Unified Image Generation Model towards Visual Intelligence](https://huggingface.co/papers/2611.07392)** · 43 upvotes: We present WeLM-Image, a unified image foundation model that integrates multimodal understanding into text-to-image generation, instruction-guided editing, and multi-reference synthesis. _(matches: distillation, transformer)_
+- **[ToolSpace: Scaling Tool-Centric Environment Synthesis for Long-Horizon Agents](https://huggingface.co/papers/2611.05036)** · 41 upvotes: Large language models are deployed as long-horizon agents that compose diverse tools across MCP services into executable workflows. _(matches: llm, language model, agent)_
+- **[TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing](https://huggingface.co/papers/2611.06741)** · 40 upvotes: Strong single-turn editing performance does not guarantee reliable multi-turn interaction: as edited outputs are repeatedly reused, small unintended changes can accumulate into severe visual drift.
 
 ## Worth reading on Hacker News
 
-- **[Tesla to wind down Cybertruck production](https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817)** · 966 points, [1820 comments](https://news.ycombinator.com/item?id=50391456)
-- **[Blender's UI and Runtime: Much Faster Than GPUI](https://github.com/ppmpreetham/BUI)** · 691 points, [281 comments](https://news.ycombinator.com/item?id=50389333)
+- **[The Components of Agent Memory](https://www.anthropic.com/research/components-of-agent-memory)** · 157 points, [86 comments](https://news.ycombinator.com/item?id=50402212)
+- **[Need for Speed Underground 2 online in the browser](https://nfsu2.xyz/)** · 926 points, [243 comments](https://news.ycombinator.com/item?id=50403052)
+- **[Every Mac comes with an (undocumented) family member classifier](https://8rank.ai/game/apple-intelligence-personal-knowledge-graph)** · 689 points, [372 comments](https://news.ycombinator.com/item?id=50403097)
 
 ---
 Sources: arXiv ok · Hugging Face ok · Hacker News ok · GitHub ok. Edit topics in `radar/config.json`.
