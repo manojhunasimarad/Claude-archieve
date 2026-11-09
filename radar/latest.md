@@ -1,22 +1,29 @@
-# Radar · Sun 08 Nov 2026
+# Radar · Mon 09 Nov 2026
 
-_8 new items, about 4 minutes. Nothing here has been shown before._
+_12 new items, about 6 minutes. Nothing here has been shown before._
 
-**Deadlines:** [COMSNETS 2027 Graduate Forum submission](https://www.comsnets.org/PhD_forum.html) **tomorrow** (09 Nov) · [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 7 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 58 days (05 Jan)
+**Deadlines:** [COMSNETS 2027 Graduate Forum submission](https://www.comsnets.org/PhD_forum.html) **today** (09 Nov) · [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 6 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 57 days (05 Jan)
+
+## New papers on your topics
+
+1. **[Sign-hedged Beam QAOA:Scaling Quantum Optimization Algorithms](https://arxiv.org/abs/2611.08646)**: Quantum Approximate Optimization Algorithm (QAOA) encodes a combinatorial objective as an Ising Hamiltonian and alternates cost and mixer operations for p rounds. _(Edge AI, pruning, quantization)_
+2. **[Scanning Probe Control, Quantum Dynamics, and Dispersive Readout of Suspended Carbon Nanotube Resonators](https://arxiv.org/abs/2611.09581)**: Suspended carbon nanotubes (CNTs) offer promising opportunities for quantum nanomechanics owing to their small effective mass, strong electrostatic tunability, and mechanical nonlinearity. _(Edge AI, pruning, quantization)_
+3. **[Diversity-Aware Client Selection for Communication-Efficient Federated Learning](https://arxiv.org/abs/2611.09278)**: Federated learning (FL) enables collaborative model training across distributed clients without sharing raw data, making it attractive for privacy-sensitive and bandwidth-constrained applications. _(Federated learning: vehicles, edge, communication)_
+4. **[Compressed Per-Player Local Methods for Multiplayer Federated Learning: Exact Convergence via Increment Sharing](https://arxiv.org/abs/2611.08686)**: Multiplayer Federated Learning (MpFL), introduced by Yoon et al. _(Federated learning: vehicles, edge, communication)_
 
 ## Trending in AI research today
 
-- **[From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence](https://huggingface.co/papers/2611.05376)** · 86 upvotes: For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. _(matches: embedded, robot, agent)_
-- **[Factorized MLLM Embeddings for Composed Image Retrieval](https://huggingface.co/papers/2611.05193)** · 48 upvotes: Composed Image Retrieval (CIR) aims to retrieve a target image given a reference image and a modification text. _(matches: language model)_
-- **[WeLM-Image: A Unified Image Generation Model towards Visual Intelligence](https://huggingface.co/papers/2611.07392)** · 43 upvotes: We present WeLM-Image, a unified image foundation model that integrates multimodal understanding into text-to-image generation, instruction-guided editing, and multi-reference synthesis. _(matches: distillation, transformer)_
-- **[ToolSpace: Scaling Tool-Centric Environment Synthesis for Long-Horizon Agents](https://huggingface.co/papers/2611.05036)** · 41 upvotes: Large language models are deployed as long-horizon agents that compose diverse tools across MCP services into executable workflows. _(matches: llm, language model, agent)_
-- **[TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing](https://huggingface.co/papers/2611.06741)** · 40 upvotes: Strong single-turn editing performance does not guarantee reliable multi-turn interaction: as edited outputs are repeatedly reused, small unintended changes can accumulate into severe visual drift.
+- **[SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes](https://huggingface.co/papers/2611.08264)** · 45 upvotes: We identify a key limitation of existing feed-forward 3DGS methods: Gaussian attributes are typically predicted in a radial-distance-normalized space that canonicalizes a global radial statistic of th
+- **[What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?](https://huggingface.co/papers/2611.06483)** · 39 upvotes: While multi-turn agentic reinforcement learning (RL) excels on long-horizon tasks, its performance gains remain highly sensitive to interaction constraints. _(matches: llm, agent)_
+- **[GameVerse: A Minute-Scale Gameplay Dataset for Long-Horizon Interactive World Modeling](https://huggingface.co/papers/2610.37257)** · 37 upvotes: Recent advances in interactive world models have made it possible to generate controllable, dynamic environments from action inputs. _(matches: segmentation)_
+- **[EvoMemState: Evolving Memory State for Personal Agents](https://huggingface.co/papers/2611.03743)** · 34 upvotes: Long-term memory enables large language model (LLM) agents to provide continuous personalized assistance by retaining user information across interactions. _(matches: llm, language model, agent)_
+- **[Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models](https://huggingface.co/papers/2611.06817)** · 34 upvotes: Egocentric human video offers a scalable source of manipulation priors for robot learning, yet translating raw data scale into generalizable robot policies demands rigorous data curation and training  _(matches: robot)_
 
 ## Worth reading on Hacker News
 
-- **[The Components of Agent Memory](https://www.anthropic.com/research/components-of-agent-memory)** · 157 points, [86 comments](https://news.ycombinator.com/item?id=50402212)
-- **[Need for Speed Underground 2 online in the browser](https://nfsu2.xyz/)** · 926 points, [243 comments](https://news.ycombinator.com/item?id=50403052)
-- **[Every Mac comes with an (undocumented) family member classifier](https://8rank.ai/game/apple-intelligence-personal-knowledge-graph)** · 689 points, [372 comments](https://news.ycombinator.com/item?id=50403097)
+- **[Agent memory needs its OpenTelemetry moment](https://www.lorekit.io/blog/open-agent-memory-format)** · 179 points, [107 comments](https://news.ycombinator.com/item?id=50411467)
+- **[Goldman Sachs is pulling Claude Code from its bankers and traders](https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers)** · 738 points, [399 comments](https://news.ycombinator.com/item?id=50415628)
+- **[Nvidia CEO Jensen Huang's letter to staff about affair](https://nvidianews.nvidia.com/news/a-message-to-our-company)** · 587 points, [607 comments](https://news.ycombinator.com/item?id=50418016)
 
 ---
 Sources: arXiv ok · Hugging Face ok · Hacker News ok · GitHub ok. Edit topics in `radar/config.json`.
