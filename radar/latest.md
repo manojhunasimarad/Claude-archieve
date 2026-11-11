@@ -1,41 +1,35 @@
-# Radar · Tue 10 Nov 2026
+# Radar · Wed 11 Nov 2026
 
-_21 new items, about 10 minutes. Nothing here has been shown before._
+_15 new items, about 8 minutes. Nothing here has been shown before._
 
-**Deadlines:** [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 5 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 56 days (05 Jan)
+**Deadlines:** [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 4 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 55 days (05 Jan)
 
 ## New papers on your topics
 
-1. **[MNN-Pocket-0.3B Technical Report](https://arxiv.org/abs/2611.12311)**: This technical report presents MNN-Pocket-0.3B, a compact 300M-parameter dense language model designed for efficient on-device deployment and supporting context lengths of up to 32K tokens. _(Edge AI, pruning, quantization)_
-2. **[Decalage: Uncovering the Gap Between Model-Generated Reasoning and Actual Code Implementation in Small Language Models](https://arxiv.org/abs/2611.11721)**: Agentic code generation often asks a model to explain its reasoning before it writes code, and a common way to make such a workflow safer is to add a security instruction to the prompt. _(Small and efficient language models)_
-3. **[FedLoVA: Value-Only Aggregation for Federated LoRA Fine-Tuning of Large Language Models](https://arxiv.org/abs/2611.10248)**: Low-Rank Adaptation (LoRA) is a popular parameter-efficient fine-tuning (PEFT) method for fine-tuning of large language models (LLMs), especially in federated learning, due to its strong performance a _(Federated learning: vehicles, edge, communication)_
-4. **[Adapting Small Language Models to Romanized Nepali: Tokenizer Fertility, Reference Likelihood, and Generation Metrics](https://arxiv.org/abs/2611.12628)**: Romanized Nepali, Nepali written in Latin script, is common in digital communication but has no standard spelling and few resources, and it is unclear how reliably small open language models can be ad _(Small and efficient language models)_
-5. **[Towards Trustworthy Mobile Speech Interaction: Ensuring Voice Authenticity and Transmission Integrity](https://arxiv.org/abs/2611.11777)**: The rapid progress of generative speech models has made high-fidelity voice cloning and editing cheap, fast, and widely accessible, weakening the security of voiceprint-based authentication in mobile  _(Edge AI, pruning, quantization)_
-6. **[Beyond Similarity Entropy: A Rank-Guided Data-Free Quantization Framework for Vision Transformers](https://arxiv.org/abs/2611.11320)**: Vision Transformers (ViTs) have demonstrated remarkable performance, yet their computational and memory demands pose significant challenges for deployment on mobile devices. _(Edge AI, pruning, quantization)_
-7. **[When Self-Consistency Hurts: The Hidden Cost of Majority Voting in Small Language Models](https://arxiv.org/abs/2611.11201)**: We study prompted chain-of-thought (CoT) with self-consistency (SC), i.e. _(Small and efficient language models)_
-8. **[Sensitivity-Gated Accumulator Caching for On-Device Learning of Low-Bit Hand Networks](https://arxiv.org/abs/2611.10991)**: Small hand-tracking networks are deployed as 4- and 8-bit codes, and they should keep adapting to a user's camera after deployment, on the device and within roughly the memory of the model itself. _(Edge AI, pruning, quantization)_
+1. **[Mobile AI Factory: Building Specialized Language Models for Your Mobile Device](https://arxiv.org/abs/2611.13509)**: Small language models (SLMs) running on mobile devices can keep user data private and work without connectivity. _(Edge AI, pruning, quantization)_
+2. **[Communication-Learning Co-Design for Pinching-Antenna-Assisted Federated Learning in Heterogeneous Wireless Networks](https://arxiv.org/abs/2611.13987)**: Wireless federated learning (FL) suffers from two coupled bottlenecks: statistical heterogeneity across clients and communication-constrained model synchronization over unreliable wireless links. _(Federated learning: vehicles, edge, communication)_
+3. **[Deterministic, Reproducible Inference in Exact Integer Arithmetic, and Verifiable Distributed Inference as Its Consequence](https://arxiv.org/abs/2611.13730)**: Optimized floating-point inference is not reproducible across environments: the same model on different hardware, compilers or thread counts can produce different bits. _(Edge AI, pruning, quantization)_
+4. **[Quantized memory of measurement records near the light cone of quantum circuits](https://arxiv.org/abs/2611.13175)**: Quantum processors now measure qubits in the middle of a circuit, and the stream of outcomes is the raw output of error correction, measurement-based state preparation and monitored dynamics. _(Edge AI, pruning, quantization)_
+5. **[CHORD: Multi-resolution Compression for Multimodal Time Series](https://arxiv.org/abs/2611.11913)**: Wearables, mobile devices, and IoT platforms generate multimodal time-series data continuously and at scale, making efficient storage and transfer a primary concern. _(Edge AI, pruning, quantization)_
+6. **[UTOPI: Efficient Egocentric Long-Video Understanding in AR via User-Guided Token Pre-Compression](https://arxiv.org/abs/2611.11562)**: As long-video understanding gains increasing attention, augmented reality (AR) devices are emerging as a compelling deployment platform. _(Edge AI, pruning, quantization)_
 
 ## Trending in AI research today
 
-- **[Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription](https://huggingface.co/papers/2611.06043)** · 82 upvotes: Streaming speech recognition is increasingly consumed by machines, such as translators and voice agents, that act on each token as it appears. _(matches: agent)_
-- **[P^2-MOPD: Accelerating Multi-Teacher On-Policy Distillation via Parameter Priors](https://huggingface.co/papers/2611.03953)** · 48 upvotes: Multi-teacher on-policy distillation consolidates expert capabilities by supervising student-generated trajectories, whereas task arithmetic offers a training-free alternative through linear parameter _(matches: distillation)_
-- **[Toward the Era of Agentic Embodied Intelligence](https://huggingface.co/papers/2611.09124)** · 43 upvotes: Foundation models increasingly guide robot actions, yet sustained autonomy requires efficient control and failure recovery. _(matches: robot, agent)_
-- **[PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?](https://huggingface.co/papers/2611.08175)** · 37 upvotes: Automating printed circuit board (PCB) routing requires coordinating board-level connectivity decisions with geometric execution under strict design rules. _(matches: llm, agent)_
-- **[WorldFoundry: Towards Unified Infrastructure for World Intelligence](https://huggingface.co/papers/2611.10771)** · 34 upvotes: Visual generative models increasingly blur the line between synthesizing observations and simulating environments.
+- **[Learning Heterogeneous Tactile Representation for General Dexterous Manipulation](https://huggingface.co/papers/2611.12806)** · 96 upvotes: Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence. _(matches: robot)_
+- **[Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery](https://huggingface.co/papers/2611.12762)** · 54 upvotes: We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it.
+- **[OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer](https://huggingface.co/papers/2611.04720)** · 39 upvotes: Industrial recommender systems allocate substantial computation to pointwise candidate scoring, yet separate reranking and mix-ranking stages still assemble the final exposure slate using hand-crafted _(matches: transformer)_
+- **[Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning](https://huggingface.co/papers/2611.12886)** · 38 upvotes: Agentic reinforcement learning (RL) and multi-teacher on-policy distillation (MOPD) offer complementary routes to post-training. _(matches: distillation, agent)_
+- **[LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting](https://huggingface.co/papers/2611.06808)** · 35 upvotes: Financial backtests of large language models (LLMs) are meaningful only if the model did not already know the outcomes it is asked to predict. _(matches: language model)_
 
 ## Rising repos (created in the last 14 days)
 
-- **[RunanywhereAI/trnrt](https://github.com/RunanywhereAI/trnrt)** · 523 stars · Python: The open LLM inference engine for AWS Trainium: NKI megakernels, 1M-token context, OpenAI-compatible API. By RunAnywhere.
-- **[Leonhart999/slam-autonav-console](https://github.com/Leonhart999/slam-autonav-console)** · 20 stars · Python: SLAM and AutoNav Console: browser console for LiDAR SLAM mapping (FAST-LIO2 / GLIM), Nav2 navigation and evo evaluation in Gazebo, ROS 2 Humble
-- **[SAOS-3624/dsh-see-now](https://github.com/SAOS-3624/dsh-see-now)** · 544 stars · JavaScript: 让 AI 实时看见你的屏幕：按变化量筛选帧、多帧拼进一张图，静止画面几乎不花 token
+- **[aa1143/NamiAgent](https://github.com/aa1143/NamiAgent)** · 493 stars · Python: 零基础入门 AI Agent 的基础教程。不只是教程，也是一个能在本地跑起来的 Agent：读写文件、执行命令、MCP、长期记忆，自带网页端看清每一步。从 100 行最小循环开始，一课加一个能力，最后拆解 Claude Code、Codex 等主流 Agent
 
 ## Worth reading on Hacker News
 
-- **[When will this stop? The Raspberry Pi 5 16GB SBC now sells for $385](https://www.cnx-software.com/2026/11/03/when-will-this-stop-the-raspberry-pi-5-16gb-sbc-now-sells-for-385/)** · 313 points, [282 comments](https://news.ycombinator.com/item?id=50428801)
-- **[ChatGPT Desktop forwards your SSH agent to remote machines](https://news.ycombinator.com/item?id=50422628)** · 208 points, [73 comments](https://news.ycombinator.com/item?id=50422628)
-- **[6 Hours of YouTube and 85 handtyped pages of notes on LLM Inference – Start here](https://github.com/samir-sarwar/samir-vllm)** · 78 points, [12 comments](https://news.ycombinator.com/item?id=50424199)
-- **[Foldable Flight: The Best Paper Airplanes](https://www.foldableflight.com)** · 987 points, [148 comments](https://news.ycombinator.com/item?id=50424581)
-- **[Claude Fable 5.2 and Mythos 5.2](https://www.anthropic.com/claude-fable-and-mythos-5-2)** · 975 points, [6 comments](https://news.ycombinator.com/item?id=50429906)
+- **[Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives](https://github.com/GoogleChrome/modern-web-guidance)** · 347 points, [103 comments](https://news.ycombinator.com/item?id=50443812)
+- **[Smart home devices should work without the internet](https://docodethatmatters.com/home-automation-overnight-success/)** · 871 points, [312 comments](https://news.ycombinator.com/item?id=50441707)
+- **[.name Grandfathered](https://neil.fraser.name/news/2026/11/10/)** · 789 points, [171 comments](https://news.ycombinator.com/item?id=50442736)
 
 ---
 Sources: arXiv ok · Hugging Face ok · Hacker News ok · GitHub ok. Edit topics in `radar/config.json`.
