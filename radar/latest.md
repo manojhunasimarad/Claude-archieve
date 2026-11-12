@@ -1,35 +1,30 @@
-# Radar · Wed 11 Nov 2026
+# Radar · Thu 12 Nov 2026
 
-_15 new items, about 8 minutes. Nothing here has been shown before._
+_13 new items, about 6 minutes. Nothing here has been shown before._
 
-**Deadlines:** [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 4 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 55 days (05 Jan)
-
-## New papers on your topics
-
-1. **[Mobile AI Factory: Building Specialized Language Models for Your Mobile Device](https://arxiv.org/abs/2611.13509)**: Small language models (SLMs) running on mobile devices can keep user data private and work without connectivity. _(Edge AI, pruning, quantization)_
-2. **[Communication-Learning Co-Design for Pinching-Antenna-Assisted Federated Learning in Heterogeneous Wireless Networks](https://arxiv.org/abs/2611.13987)**: Wireless federated learning (FL) suffers from two coupled bottlenecks: statistical heterogeneity across clients and communication-constrained model synchronization over unreliable wireless links. _(Federated learning: vehicles, edge, communication)_
-3. **[Deterministic, Reproducible Inference in Exact Integer Arithmetic, and Verifiable Distributed Inference as Its Consequence](https://arxiv.org/abs/2611.13730)**: Optimized floating-point inference is not reproducible across environments: the same model on different hardware, compilers or thread counts can produce different bits. _(Edge AI, pruning, quantization)_
-4. **[Quantized memory of measurement records near the light cone of quantum circuits](https://arxiv.org/abs/2611.13175)**: Quantum processors now measure qubits in the middle of a circuit, and the stream of outcomes is the raw output of error correction, measurement-based state preparation and monitored dynamics. _(Edge AI, pruning, quantization)_
-5. **[CHORD: Multi-resolution Compression for Multimodal Time Series](https://arxiv.org/abs/2611.11913)**: Wearables, mobile devices, and IoT platforms generate multimodal time-series data continuously and at scale, making efficient storage and transfer a primary concern. _(Edge AI, pruning, quantization)_
-6. **[UTOPI: Efficient Egocentric Long-Video Understanding in AR via User-Guided Token Pre-Compression](https://arxiv.org/abs/2611.11562)**: As long-video understanding gains increasing attention, augmented reality (AR) devices are emerging as a compelling deployment platform. _(Edge AI, pruning, quantization)_
+**Deadlines:** [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 3 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 54 days (05 Jan)
 
 ## Trending in AI research today
 
-- **[Learning Heterogeneous Tactile Representation for General Dexterous Manipulation](https://huggingface.co/papers/2611.12806)** · 96 upvotes: Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence. _(matches: robot)_
-- **[Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery](https://huggingface.co/papers/2611.12762)** · 54 upvotes: We introduce Sage-Taiyi, a metacognition-inspired architecture that uses accumulated scientific understanding to guide what to investigate next and how to investigate it.
-- **[OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer](https://huggingface.co/papers/2611.04720)** · 39 upvotes: Industrial recommender systems allocate substantial computation to pointwise candidate scoring, yet separate reranking and mix-ranking stages still assemble the final exposure slate using hand-crafted _(matches: transformer)_
-- **[Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning](https://huggingface.co/papers/2611.12886)** · 38 upvotes: Agentic reinforcement learning (RL) and multi-teacher on-policy distillation (MOPD) offer complementary routes to post-training. _(matches: distillation, agent)_
-- **[LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting](https://huggingface.co/papers/2611.06808)** · 35 upvotes: Financial backtests of large language models (LLMs) are meaningful only if the model did not already know the outcomes it is asked to predict. _(matches: language model)_
+- **[Tree-Ising: Repairing Language Models with Bit-Level Ising Edits](https://huggingface.co/papers/2611.14210)** · 83 upvotes: Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. _(matches: llm, language model, agent)_
+- **[Few-Step Streaming Video Generation via Condition Shifting](https://huggingface.co/papers/2611.14033)** · 83 upvotes: Few-step sampling reduces the cost of streaming video generation. _(matches: distillation)_
+- **[World In-Context Learning for Agentic Robot Manipulation](https://huggingface.co/papers/2611.12885)** · 66 upvotes: Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. _(matches: robot, agent)_
+- **[Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents](https://huggingface.co/papers/2611.14320)** · 61 upvotes: External memory enables LLM agents to improve from experience by distilling trajectories of past tasks into concise lessons for new tasks. _(matches: llm, agent)_
+- **[Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization](https://huggingface.co/papers/2611.11995)** · 35 upvotes: In this work, we study whether frontier agent can continually improve real-world AI infrastructure over long horizons. _(matches: agent)_
 
 ## Rising repos (created in the last 14 days)
 
-- **[aa1143/NamiAgent](https://github.com/aa1143/NamiAgent)** · 493 stars · Python: 零基础入门 AI Agent 的基础教程。不只是教程，也是一个能在本地跑起来的 Agent：读写文件、执行命令、MCP、长期记忆，自带网页端看清每一步。从 100 行最小循环开始，一课加一个能力，最后拆解 Claude Code、Codex 等主流 Agent
+- **[agentes-chat/agentes-chat](https://github.com/agentes-chat/agentes-chat)** · 633 stars · TypeScript: Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok,
+- **[EVOLCORE/FalconEye-FPV](https://github.com/EVOLCORE/FalconEye-FPV)** · 20 stars · Python: Autonomous AI FPV Drone System: Edge AI vision (YOLO11/TensorRT), visual tracking & collision intercept, multi-drone airborne mesh swarms, military thermal nigh
 
 ## Worth reading on Hacker News
 
-- **[Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives](https://github.com/GoogleChrome/modern-web-guidance)** · 347 points, [103 comments](https://news.ycombinator.com/item?id=50443812)
-- **[Smart home devices should work without the internet](https://docodethatmatters.com/home-automation-overnight-success/)** · 871 points, [312 comments](https://news.ycombinator.com/item?id=50441707)
-- **[.name Grandfathered](https://neil.fraser.name/news/2026/11/10/)** · 789 points, [171 comments](https://news.ycombinator.com/item?id=50442736)
+- **[My AI agents found an unmapped Maya site?](https://pietromiotti.com/latest/maya-site)** · 978 points, [356 comments](https://news.ycombinator.com/item?id=50452455)
+- **[United Airlines bans AI agents from booking flights on behalf of travelers](https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/)** · 531 points, [519 comments](https://news.ycombinator.com/item?id=50458900)
+- **[Atuin Threads: All your agent sessions on every machine](https://blog.atuin.sh/threads-agent-sessions/)** · 214 points, [79 comments](https://news.ycombinator.com/item?id=50453637)
+- **[Faster Retrieval for Better, More Efficient RAG](https://machinelearning.apple.com/research/faster-retrieval)** · 202 points, [37 comments](https://news.ycombinator.com/item?id=50455633)
+- **[AWS Emulator and the engineer's job when agents write the code](https://www.allthingsdistributed.com/2026/11/aws-emulator-and-the-engineers-job-when-agents-write-the-code.html)** · 111 points, [2 comments](https://news.ycombinator.com/item?id=50456740)
+- **[Huawei releases MACaQ, its internal quantizer for local inference](https://github.com/huawei-csl/MACaQ)** · 97 points, [24 comments](https://news.ycombinator.com/item?id=50458166)
 
 ---
 Sources: arXiv ok · Hugging Face ok · Hacker News ok · GitHub ok. Edit topics in `radar/config.json`.
