@@ -1,30 +1,29 @@
-# Radar · Thu 12 Nov 2026
+# Radar · Fri 13 Nov 2026
 
-_13 new items, about 6 minutes. Nothing here has been shown before._
+_12 new items, about 6 minutes. Nothing here has been shown before._
 
-**Deadlines:** [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 3 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 54 days (05 Jan)
+**Deadlines:** [IEEE IV 2027 paper deadline (confirm on ieee-iv.org)](https://ieee-iv.org/) **in 2 days** (15 Nov) · [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 53 days (05 Jan)
 
 ## Trending in AI research today
 
-- **[Tree-Ising: Repairing Language Models with Bit-Level Ising Edits](https://huggingface.co/papers/2611.14210)** · 83 upvotes: Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. _(matches: llm, language model, agent)_
-- **[Few-Step Streaming Video Generation via Condition Shifting](https://huggingface.co/papers/2611.14033)** · 83 upvotes: Few-step sampling reduces the cost of streaming video generation. _(matches: distillation)_
-- **[World In-Context Learning for Agentic Robot Manipulation](https://huggingface.co/papers/2611.12885)** · 66 upvotes: Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. _(matches: robot, agent)_
-- **[Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents](https://huggingface.co/papers/2611.14320)** · 61 upvotes: External memory enables LLM agents to improve from experience by distilling trajectories of past tasks into concise lessons for new tasks. _(matches: llm, agent)_
-- **[Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization](https://huggingface.co/papers/2611.11995)** · 35 upvotes: In this work, we study whether frontier agent can continually improve real-world AI infrastructure over long horizons. _(matches: agent)_
+- **[Scaling Mathematical Proof Supervision from Structured Textbooks](https://huggingface.co/papers/2610.40394)** · 42 upvotes: Mathematical supervision for language models is typically flattened into isolated problem-solution pairs, discarding the curricular organization and evidential structure of the original sources. _(matches: language model)_
+- **[One Table, Many Queries: Benchmarking Generalist Tabular Models Across Generation, Imputation, and Prediction](https://huggingface.co/papers/2611.13001)** · 40 upvotes: Generation, imputation, and prediction query different aspects of the same tabular distribution, but are usually evaluated separately.
+- **[BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model](https://huggingface.co/papers/2611.14815)** · 35 upvotes: Driving world models aim to simulate how a scene unfolds under different ego actions. _(matches: vehicle, transformer)_
+- **[dNaViT: Discrete Codes are General-Purpose Visual Representations](https://huggingface.co/papers/2611.12426)** · 35 upvotes: Discrete autoregressive modeling, notably through next-token prediction, has become a cornerstone of modern language models. _(matches: quantiz, language model, transformer)_
+- **[SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering](https://huggingface.co/papers/2611.13410)** · 34 upvotes: Low-bit quantization reduces the inference cost of LLM agents but can compromise task success. _(matches: quantiz, distillation, llm)_
 
 ## Rising repos (created in the last 14 days)
 
-- **[agentes-chat/agentes-chat](https://github.com/agentes-chat/agentes-chat)** · 633 stars · TypeScript: Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok,
-- **[EVOLCORE/FalconEye-FPV](https://github.com/EVOLCORE/FalconEye-FPV)** · 20 stars · Python: Autonomous AI FPV Drone System: Edge AI vision (YOLO11/TensorRT), visual tracking & collision intercept, multi-drone airborne mesh swarms, military thermal nigh
+- **[Dodaios/ste80-humanizer](https://github.com/Dodaios/ste80-humanizer)** · 468 stars · Python: STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy sha
+- **[Interactive-Active-AI/NextTransformer](https://github.com/Interactive-Active-AI/NextTransformer)** · 410 stars · Python: :sunrise: A comprehensive, cutting-edge open-source framework for next-generation Transformers/LLM, with compute-matched benchmarking and a platform for autonom
+- **[hyperionaidev/smolmaxxing](https://github.com/hyperionaidev/smolmaxxing)** · 397 stars · C: maxxing the ability to run different LLMs on the smallest devices possible
 
 ## Worth reading on Hacker News
 
-- **[My AI agents found an unmapped Maya site?](https://pietromiotti.com/latest/maya-site)** · 978 points, [356 comments](https://news.ycombinator.com/item?id=50452455)
-- **[United Airlines bans AI agents from booking flights on behalf of travelers](https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/)** · 531 points, [519 comments](https://news.ycombinator.com/item?id=50458900)
-- **[Atuin Threads: All your agent sessions on every machine](https://blog.atuin.sh/threads-agent-sessions/)** · 214 points, [79 comments](https://news.ycombinator.com/item?id=50453637)
-- **[Faster Retrieval for Better, More Efficient RAG](https://machinelearning.apple.com/research/faster-retrieval)** · 202 points, [37 comments](https://news.ycombinator.com/item?id=50455633)
-- **[AWS Emulator and the engineer's job when agents write the code](https://www.allthingsdistributed.com/2026/11/aws-emulator-and-the-engineers-job-when-agents-write-the-code.html)** · 111 points, [2 comments](https://news.ycombinator.com/item?id=50456740)
-- **[Huawei releases MACaQ, its internal quantizer for local inference](https://github.com/huawei-csl/MACaQ)** · 97 points, [24 comments](https://news.ycombinator.com/item?id=50458166)
+- **[Show HN: AgentRun – open-source, Self-improving Managed Agents](https://github.com/Parcha-ai/agentrun/blob/main/README.md)** · 97 points, [27 comments](https://news.ycombinator.com/item?id=50471650)
+- **[Brave Search API now accepts agentic payments via the x402 protocol](https://brave.com/blog/search-api-agentic-payments/)** · 78 points, [39 comments](https://news.ycombinator.com/item?id=50477649)
+- **[Jensen Huang resigns](https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f)** · 3430 points, [3076 comments](https://news.ycombinator.com/item?id=50467087)
+- **[Anthropic IPO](https://ipo.anthropic.com/us/)** · 910 points, [854 comments](https://news.ycombinator.com/item?id=50465829)
 
 ---
-Sources: arXiv ok · Hugging Face ok · Hacker News ok · GitHub ok. Edit topics in `radar/config.json`.
+Sources: arXiv failed (TimeoutError: The read operation timed out) · Hugging Face ok · Hacker News ok · GitHub ok. Edit topics in `radar/config.json`.
