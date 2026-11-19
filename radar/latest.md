@@ -1,43 +1,39 @@
-# Radar · Wed 18 Nov 2026
+# Radar · Thu 19 Nov 2026
 
-_23 new items, about 12 minutes. Nothing here has been shown before._
+_19 new items, about 10 minutes. Nothing here has been shown before._
 
-**Deadlines:** [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 48 days (05 Jan)
+**Deadlines:** [COMSNETS 2027 conference, Bengaluru](https://www.comsnets.org/) in 47 days (05 Jan)
 
 ## New papers on your topics
 
-1. **[Transfer Once, Ask Locally: Compact Audio-Visual Memory for On-Device Question Answering](https://arxiv.org/abs/2611.23085)**: Audio-visual question answering on lightweight user devices requires balancing speed, memory usage, privacy, and communication. _(Edge AI, pruning, quantization)_
-2. **[LMMR: Learned Multigranular Memory Retrieval for Small Language Model Agents](https://arxiv.org/abs/2611.22425)**: Small language model agents have limited space to read the memory needed for multi-hop questions. _(Small and efficient language models)_
-3. **[Communicate the Change: Efficient Expert Parallelism via Activation Compression](https://arxiv.org/abs/2611.22215)**: Scaling has driven the success of large language models (LLM), with sparse mixture-of-experts (MoE) architectures enabling greater parameter capacity without a proportional increase in computation. _(Edge AI, pruning, quantization)_
-4. **[SPICE: Sparse Parameter Gossip for LLM Pretraining](https://arxiv.org/abs/2611.23053)**: Pretraining language models across geographically distributed resources requires communication-efficient methods that operate under limited and variable internet bandwidth. _(Small and efficient language models)_
-5. **[V2V Communications Using Blockchain-Enabled 6G Technology and Federated Learning](https://arxiv.org/abs/2611.21932)**: This study proposes an interesting approach for vehicle-to-vehicle (V2V) communication, which integrates blockchain technology, federated learning (FL), and allocation optimization of latency and reso _(Federated learning: vehicles, edge, communication)_
-6. **[Automated Left Ventricle Strain Analysis from DENSE MRI](https://arxiv.org/abs/2611.20193)**: Background: Quantifying myocardial strains from Displacement ENcoding with Stimulated Echoes (DENSE) MRI provides insight into left ventricular performance, but current data processing pipelines remai _(Cardiac MRI segmentation (Philips work))_
-7. **[Learning from Mutants: Teaching Small Language Models to Synthesise Loop Invariants](https://arxiv.org/abs/2611.19569)**: Large language models (LLMs) have proven promising for synthesising loop invariants, a long-standing obstacle to automated program verification. _(Small and efficient language models)_
-8. **[Distributed Blind Source Separation from Compressed Mixtures](https://arxiv.org/abs/2611.23024)**: Blind source separation (BSS) is increasingly needed in sensing architectures where mixtures are acquired by multiple remote devices but the inference itself is carried out centrally. _(Edge AI, pruning, quantization)_
+1. **[Hypnos: A Dual-Phase End-to-End Platform for Scalable Continual Learning at the Edge](https://arxiv.org/abs/2611.24637)**: Continual learning (CL) enables neural networks to adapt to non-stationary data streams by mitigating catastrophic forgetting, offering a path to robust, private, and adaptable edge devices. _(Edge AI, pruning, quantization)_
+2. **[OMNIS+: Semantic RAN Slicing and Quantization for Dynamic Split Neural Networks](https://arxiv.org/abs/2611.23977)**: Edge computing enables resource-constrained devices to execute machine learning (ML) applications via task offloading, with radio access network (RAN) slicing playing a crucial role in provisioning jo _(Edge AI, pruning, quantization)_
+3. **[MoMoVL: Modality-Aware Adaptive Compression for On-Device Sparsely-Activated Vision-Language Models](https://arxiv.org/abs/2611.23695)**: The rise of the agentic web has been accompanied by growing demand for on-device Vision-Language Models (VLMs) that perform diverse cross-modal web tasks with enhanced privacy and reduced latency. _(Edge AI, pruning, quantization)_
+4. **[Implementing Binary Transformers with Approximate Memories with Permutation Invariance Enabled Selective (PIES) Protection](https://arxiv.org/abs/2611.23358)**: Quantization is an effective technique to reduce memory storage, computation complexity and power for Transformers, and the binarization of the weights is important for meeting these requirements. _(Edge AI, pruning, quantization)_
+5. **[Self-Rewarded Reinforcement Learning for Better-Structured Medical Explanations in Small Language Models](https://arxiv.org/abs/2611.24650)**: Small language models (SLMs) can run on commodity hardware and support privacy-preserving, on-premises clinical deployment, but their medical explanations are often short and poorly structured compare _(Small and efficient language models)_
+6. **[Do Frontier Model Ingredients Add Up? A Replicated Factorial Study of Small Language Models](https://arxiv.org/abs/2611.24540)**: Building a small language model requires choosing which published improvements to combine. _(Small and efficient language models)_
+7. **[ReCIM-HD: A 40 nm On-Device Learning Accelerator with Hyperdimensional Computing via Importance-Based Hybrid Digital-ReRAM CIM](https://arxiv.org/abs/2611.23973)**: ReCIM-HD is an on-device learning (ODL) accelerator that integrates gradient-free hyperdimensional computing (HDC) with resistive RAM (ReRAM)-based analog compute-in-memory (CIM). _(Edge AI, pruning, quantization)_
+8. **[Learning through Discernment: when a small language model learns from user feedback on the job, and when it decays](https://arxiv.org/abs/2611.23716)**: Small language models on devices could keep improving by learning, overnight, from their own daily work. _(Small and efficient language models)_
 
 ## Trending in AI research today
 
-- **[TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks](https://huggingface.co/papers/2611.22115)** · 139 upvotes: We present Xing 4, a series of large language models that extends the TeleChat lineage through coordinated advances in model architecture and training infrastructure on Ascend. _(matches: language model, agent)_
-- **[Sage S2.1 Flash Technical Report](https://huggingface.co/papers/2611.21072)** · 93 upvotes: We introduce Sage S1.5 Flash, a 320-billion-parameter general-purpose mixture-of-experts model designed to reason over scientific evidence and act in interactive environments. _(matches: agent)_
-- **[AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs](https://huggingface.co/papers/2611.17621)** · 85 upvotes: Kernel optimization is essential for efficient large language model (LLM) training and inference on Ascend NPUs. _(matches: llm, language model, agent)_
-- **[K2-Horizon: A Frontier Fleet of Open Source Language Models](https://huggingface.co/papers/2611.21003)** · 75 upvotes: We present K2-Horizon, a fleet of six fully open language models, from a 0.9B dense model to a 375B-A23B MoE, built for general-purpose reasoning and agentic work across math and science, software eng _(matches: language model, agent, open source)_
-- **[SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection](https://huggingface.co/papers/2611.07222)** · 64 upvotes: Tool-using agents act on email, files, and payments, so an instruction hidden in a web page or a shared document can make an agent send data or money to an attacker. _(matches: language model, agent)_
+- **[Weight-Space Programming Doesn't Need Transformers](https://huggingface.co/papers/2611.22055)** · 52 upvotes: Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. _(matches: llm, language model, transformer)_
+- **[SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations](https://huggingface.co/papers/2611.20218)** · 51 upvotes: A coding agent working within a software organization must establish what to build, collaborate with colleagues, and verify what it delivers. _(matches: agent)_
+- **[Multi-Branch Transformer](https://huggingface.co/papers/2611.19800)** · 45 upvotes: Transformer language models are commonly scaled by making their blocks wider or stacking them deeper. _(matches: language model, transformer)_
+- **[ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models](https://huggingface.co/papers/2611.21099)** · 41 upvotes: Frontier multimodal models can now control robots zero-shot from images, yet many manipulation tasks depend on contact forces that images cannot show. _(matches: robot)_
+- **[Beyond Answering: Learning to Speak First and Act in Streaming Video](https://huggingface.co/papers/2611.17048)** · 35 upvotes: Most AI assistants respond only when prompted, remaining silent even when events in the video stream offer meaningful opportunities for conversation. _(matches: language model)_
 
 ## Rising repos (created in the last 14 days)
 
-- **[sybil-solutions/inference-optimisation-skill](https://github.com/sybil-solutions/inference-optimisation-skill)** · 993 stars · Python: Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization
-- **[TypeTyrantScheme/Gemini-Config-Checker-](https://github.com/TypeTyrantScheme/Gemini-Config-Checker-)** · 473 stars · Makefile: Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)
-- **[WingDataVacuum/Gemini-Config-Checker-](https://github.com/WingDataVacuum/Gemini-Config-Checker-)** · 473 stars · Makefile: Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)
-- **[Renakoni/Voicebox](https://github.com/Renakoni/Voicebox)** · 88 stars · Kotlin: 最好用的 Android 离线语音克隆与三语 TTS（误）——基于 GPT-SoVITS，支持中日英。 | The best offline voice cloning & trilingual TTS on Android (jk) — powered by GPT-SoVITS (ZH/JA/EN).
+- **[weightcashiercupola/Gemini-Config-Checker-](https://github.com/weightcashiercupola/Gemini-Config-Checker-)** · 474 stars · Makefile: Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)
+- **[VortexHostFeel/Gemini-Config-Checker-](https://github.com/VortexHostFeel/Gemini-Config-Checker-)** · 473 stars · Makefile: Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)
 
 ## Worth reading on Hacker News
 
-- **[We don't need more apps, we need better open source](https://jordankrueger.com/blog/better-open-source-not-more-apps/)** · 349 points, [236 comments](https://news.ycombinator.com/item?id=50532086)
-- **[Harvard researchers find AI coding agents shifted the bottleneck to code review](https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/)** · 168 points, [224 comments](https://news.ycombinator.com/item?id=50538303)
-- **[Not Everything Needs an LLM](https://newsletter.posthog.com/p/decision-models)** · 148 points, [59 comments](https://news.ycombinator.com/item?id=50535740)
-- **[Launch HN: StarSling (YC P25) – Self-improving CI for agent-volume repos](https://starsling.dev)** · 66 points, [37 comments](https://news.ycombinator.com/item?id=50536468)
-- **[GPT‑6.2 Astra and Sol](https://openai.com/index/introducing-gpt-6-2-astra-sol/)** · 1249 points, [774 comments](https://news.ycombinator.com/item?id=50535230)
-- **[New Evidence Shows School Phone Bans Are Gradually Improving Test Scores](https://www.nytimes.com/2026/11/17/upshot/school-phone-bans-study-scores.html)** · 1221 points, [613 comments](https://news.ycombinator.com/item?id=50530163)
+- **[AI agents ask better questions than KPMG accountants in audit trial](https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/)** · 450 points, [204 comments](https://news.ycombinator.com/item?id=50547777)
+- **[LLM assisted reverse engineering](https://www.slowchronicle.com/posts/llm-assisted-reverse-engineering)** · 190 points, [46 comments](https://news.ycombinator.com/item?id=50553225)
+- **[Unauthenticated remote code execution in Nginx](https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities)** · 1355 points, [588 comments](https://news.ycombinator.com/item?id=50547374)
+- **[Gemini 4 Neon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/)** · 784 points, [645 comments](https://news.ycombinator.com/item?id=50552424)
 
 ---
 Sources: arXiv ok · Hugging Face ok · Hacker News ok · GitHub ok. Edit topics in `radar/config.json`.
